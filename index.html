@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="Dannielle Dan — UX Design Leader, Author & Creator. AI-powered B2B design for growth." />
+  <meta name="description" content="Dannielle Dan — Fractional Design Leader for B2B SaaS. I help CEOs and founders turn design into a growth lever." />
   <title>Dannielle Dan</title>
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -12,6 +12,156 @@
   <link rel="stylesheet" href="css/plugins.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Agentic additions -->
+  <style id="agentic-additions">
+    /* Availability badge (hero eyebrow) */
+    .avail-badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #12c2e9;
+      background: rgba(18, 194, 233, 0.08);
+      border: 1px solid rgba(18, 194, 233, 0.25);
+      border-radius: 30px;
+      padding: 5px 14px;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* Problem Selector cards */
+    .problem-card {
+      padding: 35px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .4s;
+      height: 100%;
+    }
+    .problem-card:hover,
+    .problem-card.active {
+      border-color: rgba(18, 194, 233, 0.5);
+      background: rgba(18, 194, 233, 0.05);
+      transform: translateY(-4px);
+    }
+    .problem-card.active {
+      box-shadow: 0 0 0 1px rgba(18, 194, 233, 0.3);
+    }
+    .problem-card .prob-num {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #12c2e9;
+      margin-bottom: 15px;
+    }
+    .problem-card h5 {
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .problem-card p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #a4a7b1;
+      margin-bottom: 20px;
+    }
+    .problem-card .prob-cta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #12c2e9;
+      opacity: 0;
+      transition: opacity .3s;
+      display: block;
+    }
+    .problem-card:hover .prob-cta,
+    .problem-card.active .prob-cta {
+      opacity: 1;
+    }
+
+    /* Featured Work outcome headline */
+    .portfolio .gallery .items .cont h6 {
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    /* Availability strip */
+    .avail-strip {
+      padding: 35px 0;
+      background: rgba(18, 194, 233, 0.04);
+    }
+    .avail-pulse {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #12c2e9;
+      flex-shrink: 0;
+      animation: pulse-ring 1.5s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(18, 194, 233, 0.6); }
+      70%  { box-shadow: 0 0 0 10px rgba(18, 194, 233, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(18, 194, 233, 0); }
+    }
+    .avail-main {
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .avail-main strong {
+      font-weight: 700;
+      color: #12c2e9;
+    }
+    .avail-sub {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      margin: 4px 0 0;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 767px) {
+      .mt-mobile { margin-top: 20px; }
+      .avail-strip .text-right { text-align: left !important; }
+    }
+
+    /* Nav CTA */
+    .navbar-nav .butn.color.curve {
+      margin-top: -2px;
+    }
+
+    /* 90-day list spacing */
+    .ninety-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+    .ninety-list li {
+      font-size: 14px;
+      color: #a4a7b1;
+      line-height: 1.9;
+      padding-left: 18px;
+      position: relative;
+    }
+    .ninety-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #12c2e9;
+      font-size: 12px;
+    }
+
+    /* Process step spacing */
+    .process-step-v2 + .process-step-v2 {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,6 +199,9 @@
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="book.html">Book</a></li>
           <li class="nav-item"><a class="nav-link" href="mailto:dannielledandesign@gmail.com">Contact</a></li>
+          <li class="nav-item ml-20">
+            <a class="nav-link butn color curve" href="mailto:dannielledandesign@gmail.com?subject=Strategy%20Call%20Request" style="padding:8px 20px; font-size:12px;">Book a Call</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -68,18 +221,27 @@
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center">
           <div class="cont mt-100 mb-50">
-            <p class="wow fadeIn" data-wow-delay=".3s" style="font-size:11px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#12c2e9; margin-bottom:20px;">
-              UX Design Leader · Author · Creator
-            </p>
-            <h1 class="color-font fw-700 wow" data-splitting>Leading AI-powered UX</h1>
-            <h1 class="color-font fw-700 wow" data-splitting>for B2B growth</h1>
-            <h4 class="wow fadeIn" data-wow-delay=".6s" style="font-weight:300; color:#a4a7b1; margin-top:20px; margin-bottom:35px; line-height:1.8;">
-              Transforming businesses with scalable design innovation
-            </h4>
-            <div class="wow fadeInUp" data-wow-delay=".8s">
-              <a href="portfolio.html" class="butn bord curve mr-20"><span>View My Work</span></a>
-              <a href="book.html" class="butn bord curve" style="border-color:rgba(196,113,237,0.5);"><span style="background: linear-gradient(to right,#12c2e9,#c471ed,#f64f59); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">The Book</span></a>
+
+            <!-- Eyebrow + availability badge -->
+            <div class="wow fadeIn d-flex justify-content-center align-items-center flex-wrap" data-wow-delay=".3s" style="gap:16px; margin-bottom:24px;">
+              <p style="font-size:11px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#12c2e9; margin:0;">
+                Fractional Design Leadership · B2B SaaS · AI-Powered Products
+              </p>
+              <span class="avail-badge">● 2 spots open</span>
             </div>
+
+            <h1 class="color-font fw-700 wow" data-splitting>Your product is losing deals</h1>
+            <h1 class="color-font fw-700 wow" data-splitting>because design is not leading.</h1>
+
+            <h4 class="wow fadeIn" data-wow-delay=".6s" style="font-weight:300; color:#a4a7b1; margin-top:20px; margin-bottom:35px; line-height:1.8;">
+              I help <span id="hero-cycle" style="color:#12c2e9; font-weight:500;">B2B SaaS founders</span> fix that — in 90 days.
+            </h4>
+
+            <div class="wow fadeInUp" data-wow-delay=".8s">
+              <a href="mailto:dannielledandesign@gmail.com?subject=Strategy%20Call%20Request" class="butn color curve mr-20"><span>Book a Strategy Call</span></a>
+              <a href="#case-studies" class="butn bord curve" style="border-color:rgba(196,113,237,0.5);"><span style="background:linear-gradient(to right,#12c2e9,#c471ed,#f64f59); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">See Results</span></a>
+            </div>
+
           </div>
         </div>
         <div class="col-lg-10">
@@ -99,67 +261,71 @@
 
   <div class="main-content">
 
-    <!-- Brands -->
+    <!-- Trust Bar -->
     <section class="clients section-padding" style="padding-bottom:0;">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 valign md-mb50">
-            <div class="sec-head mb-0">
-              <h6 class="wow fadeIn" data-wow-delay=".5s">Brands I worked on</h6>
-              <h3 class="wow mb-20 color-font">Products</h3>
-              <p>AI-based tech, fin-tech, ed-tech and CX</p>
+        <div class="row justify-content-center mb-40">
+          <div class="col-12 text-center">
+            <span class="v2-section-label wow fadeIn" data-wow-delay=".3s">Trusted by teams at</span>
+          </div>
+        </div>
+        <div class="row bord justify-content-center">
+          <div class="col-md-3 col-6 brands">
+            <div class="item wow fadeIn" data-wow-delay=".3s">
+              <div class="img"><img src="img/clients/brands/paypal.svg" alt="PayPal"></div>
             </div>
           </div>
-          <div class="col-lg-8">
-            <div>
-              <div class="row bord">
-                <div class="col-md-3 col-6 brands">
-                  <div class="item wow fadeIn" data-wow-delay=".3s">
-                    <div class="img"><img src="img/clients/brands/paypal.svg" alt="PayPal">
-                      <a href="#0" class="link" data-splitting>PayPal</a></div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-6 brands">
-                  <div class="item wow fadeIn" data-wow-delay=".5s">
-                    <div class="img"><img src="img/clients/brands/Armorblox.png" alt="Armorblox">
-                      <a href="#0" class="link" data-splitting>Armorblox</a></div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-6 brands">
-                  <div class="item wow fadeIn" data-wow-delay=".7s">
-                    <div class="img"><img src="img/clients/brands/medallia.png" alt="Medallia">
-                      <a href="#0" class="link" data-splitting>Medallia</a></div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-6 brands">
-                  <div class="item wow fadeIn" data-wow-delay=".9s">
-                    <div class="img"><img src="img/clients/brands/microsoft.png" alt="Microsoft">
-                      <a href="#0" class="link" data-splitting>Microsoft</a></div>
-                  </div>
-                </div>
-              </div>
+          <div class="col-md-3 col-6 brands">
+            <div class="item wow fadeIn" data-wow-delay=".5s">
+              <div class="img"><img src="img/clients/brands/Armorblox.png" alt="Armorblox"></div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 brands">
+            <div class="item wow fadeIn" data-wow-delay=".7s">
+              <div class="img"><img src="img/clients/brands/medallia.png" alt="Medallia"></div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 brands">
+            <div class="item wow fadeIn" data-wow-delay=".9s">
+              <div class="img"><img src="img/clients/brands/microsoft.png" alt="Microsoft"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About intro -->
-    <section class="intro-section section-padding pb-0">
+    <!-- Problem Selector -->
+    <section class="section-padding sub-bg" id="problem-selector">
       <div class="container">
+        <div class="row justify-content-center mb-50">
+          <div class="col-lg-8 text-center">
+            <span class="v2-section-label wow fadeIn" data-wow-delay=".2s">What brings you here?</span>
+            <h3 class="wow color-font" data-wow-delay=".3s">Tell me your biggest challenge.</h3>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-lg-3 col-md-4">
-            <div class="htit sm-mb30">
-              <h4>About</h4>
+          <div class="col-lg-4 col-md-6 mb-30">
+            <div class="problem-card wow fadeInUp" data-wow-delay=".2s" data-target="#service-leadership" onclick="selectProblem(this)">
+              <div class="prob-num">01</div>
+              <h5>I need design leadership, not just a designer.</h5>
+              <p>You're scaling and need someone who can run the function.</p>
+              <span class="prob-cta">Show me how →</span>
             </div>
           </div>
-          <div class="col-lg-8 offset-lg-1 col-md-8">
-            <div class="text">
-              <p class="wow txt mb-10" data-splitting>Hi there! I'm Dannielle, a product design leader and team builder in San Francisco bay area. Being a designer in the tech industry fulfills my intellectual curiosity and creativity.</p>
-              <p class="wow txt mb-10" data-splitting>I believe in integrity, grit and growth mindset. Over the past decade, I have led design and delivered 10+ B2B SAAS products in AI-based startups, fin-tech, ed-tech and CX.</p>
-              <div class="mt-30">
-                <a href="about.html" class="butn bord curve wow fadeInUp" data-wow-delay=".3s"><span>Full Story</span></a>
-              </div>
+          <div class="col-lg-4 col-md-6 mb-30">
+            <div class="problem-card wow fadeInUp" data-wow-delay=".35s" data-target="#service-strategy" onclick="selectProblem(this)">
+              <div class="prob-num">02</div>
+              <h5>My product isn't converting. UX is the culprit.</h5>
+              <p>You need a strategy audit and a clear roadmap.</p>
+              <span class="prob-cta">Show me how →</span>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-30">
+            <div class="problem-card wow fadeInUp" data-wow-delay=".5s" data-target="#service-design" onclick="selectProblem(this)">
+              <div class="prob-num">03</div>
+              <h5>I need to ship a new product — fast.</h5>
+              <p>End-to-end design from zero to launch.</p>
+              <span class="prob-cta">Show me how →</span>
             </div>
           </div>
         </div>
@@ -170,30 +336,94 @@
     <section class="section-padding2">
       <div class="container">
         <div class="row" style="border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05); margin-top:50px;">
-          <div class="col-md-4 stat-item">
-            <div class="stat-num">10+</div>
-            <div class="stat-label">Years of Experience</div>
+          <div class="col-md-3 stat-item">
+            <div class="stat-num">$214M</div>
+            <div class="stat-label">Orby AI acquisition value — as founding designer</div>
           </div>
-          <div class="col-md-4 stat-item">
+          <div class="col-md-3 stat-item">
+            <div class="stat-num">$3M</div>
+            <div class="stat-label">Revenue growth driven at Armorblox</div>
+          </div>
+          <div class="col-md-3 stat-item">
             <div class="stat-num">15+</div>
-            <div class="stat-label">B2B Products Shipped</div>
+            <div class="stat-label">B2B SaaS products shipped to market</div>
           </div>
-          <div class="col-md-4 stat-item">
-            <div class="stat-num">4</div>
-            <div class="stat-label">Industries</div>
+          <div class="col-md-3 stat-item">
+            <div class="stat-num">90</div>
+            <div class="stat-label">Days to first major delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-Day Promise -->
+    <section class="section-padding" id="ninety-days">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 md-mb50">
+            <div class="sec-head">
+              <span class="v2-section-label wow fadeIn" data-wow-delay=".2s">The Engagement Model</span>
+              <h3 class="wow color-font">What you get<br>in 90 days.</h3>
+              <p class="mt-20" style="line-height:1.9; max-width:320px;">No ramp-up theater. No endless discovery. Real work, real velocity.</p>
+              <div class="mt-30">
+                <a href="mailto:dannielledandesign@gmail.com?subject=Strategy%20Call%20Request" class="butn color curve wow fadeInUp" data-wow-delay=".3s"><span>Start the Conversation</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1">
+
+            <div class="process-step-v2 wow fadeInUp" data-wow-delay=".2s">
+              <div class="step-num">01</div>
+              <div>
+                <h5>Days 1–30: Diagnosis &amp; Direction</h5>
+                <ul class="ninety-list mt-15">
+                  <li>Design audit — UX gaps, friction points, conversion blockers</li>
+                  <li>Stakeholder alignment session</li>
+                  <li>Prioritized design roadmap engineering can act on immediately</li>
+                  <li>First design artifacts delivered in week 2</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="process-step-v2 wow fadeInUp" data-wow-delay=".35s">
+              <div class="step-num">02</div>
+              <div>
+                <h5>Days 31–60: Build &amp; Ship</h5>
+                <ul class="ninety-list mt-15">
+                  <li>Core UX flows designed, prototyped, and tested with users</li>
+                  <li>Design system foundations or expansion</li>
+                  <li>Weekly 1-page executive brief — no jargon</li>
+                  <li>Engineering-ready handoff specs</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="process-step-v2 wow fadeInUp" data-wow-delay=".5s">
+              <div class="step-num">03</div>
+              <div>
+                <h5>Days 61–90: Measure &amp; Scale</h5>
+                <ul class="ninety-list mt-15">
+                  <li>Usability test results with actionable insights</li>
+                  <li>Iteration cycles on shipped features</li>
+                  <li>Hiring brief if you're building a design team</li>
+                  <li>Recommendation for ongoing engagement</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
     <!-- Featured Work -->
-    <section class="portfolio three-column section-padding">
+    <section class="portfolio three-column section-padding sub-bg" id="case-studies">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="sec-head mb-50">
-              <h6 class="wow fadeIn" data-wow-delay=".5s">Selected Projects</h6>
-              <h3 class="wow color-font">Featured Work</h3>
+              <h6 class="wow fadeIn" data-wow-delay=".5s">Client Results</h6>
+              <h3 class="wow color-font">Proof, not promises.</h3>
             </div>
           </div>
         </div>
@@ -206,8 +436,8 @@
               </a>
             </div>
             <div class="cont">
-              <h6>AI-powered Email Security</h6>
-              <span><a href="#0">Armorblox</a>, <a href="#0">2019–2020</a></span>
+              <h6>Revenue grew from $15K to $3M during engagement</h6>
+              <span><a href="project-details-Armorblox.html">Armorblox</a>, <a href="project-details-Armorblox.html">AI Cybersecurity · 2019–2020</a></span>
             </div>
           </div>
 
@@ -218,8 +448,8 @@
               </a>
             </div>
             <div class="cont">
-              <h6>Admin Suite for CX Admins</h6>
-              <span><a href="#0">Medallia</a>, <a href="#0">CX Platform</a></span>
+              <h6>Redesigned admin experience across 5 enterprise products</h6>
+              <span><a href="project-details-Medallia.html">Medallia</a>, <a href="project-details-Medallia.html">CX Platform</a></span>
             </div>
           </div>
 
@@ -230,8 +460,8 @@
               </a>
             </div>
             <div class="cont">
-              <h6>Microsoft Classroom</h6>
-              <span><a href="#0">Microsoft</a>, <a href="#0">2015</a></span>
+              <h6>Interactive learning shipped to millions of students</h6>
+              <span><a href="project-details-Microsoft-classroom.html">Microsoft</a>, <a href="project-details-Microsoft-classroom.html">Education · 2015</a></span>
             </div>
           </div>
 
@@ -244,49 +474,90 @@
       </div>
     </section>
 
-    <!-- Services snapshot -->
-    <section class="section-padding sub-bg">
+    <!-- Services -->
+    <section class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 md-mb50">
             <div class="sec-head">
-              <h6 class="wow fadeIn" data-wow-delay=".5s">What I Offer</h6>
+              <h6 class="wow fadeIn" data-wow-delay=".5s">How we work together</h6>
               <h3 class="wow color-font">Services</h3>
-              <p class="mt-20" style="line-height:1.9;">Strategy meets craft. Whether you need fractional design leadership, a complete redesign, or a workshop to align your team — I bring vision and execution.</p>
+              <p class="mt-20" style="line-height:1.9;">Three ways to engage — each one designed to move fast and deliver executive-level results.</p>
               <div class="mt-30">
                 <a href="services.html" class="butn bord curve wow fadeInUp" data-wow-delay=".3s"><span>Explore Services</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-7 offset-lg-1">
-            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".2s">
+
+            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".2s" id="service-leadership">
               <div class="num">01</div>
-              <h5>UX Strategy &amp; Consulting</h5>
-              <p>Translating business goals into clear design direction, roadmaps, and measurable outcomes.</p>
-            </div>
-            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".35s">
-              <div class="num">02</div>
               <h5>Fractional Design Leadership</h5>
-              <p>Embed me as your design director — strategy, team building, and executive advocacy without the full-time overhead.</p>
+              <p>Your embedded design director. I set strategy, build or lead your team, and represent design at the executive table — without the full-time cost.</p>
+              <ul>
+                <li>Design org strategy &amp; hiring</li>
+                <li>Executive reporting &amp; roadmap ownership</li>
+                <li>Team culture and process foundation</li>
+              </ul>
             </div>
-            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".5s">
+
+            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".35s" id="service-strategy">
+              <div class="num">02</div>
+              <h5>UX Strategy &amp; Audit</h5>
+              <p>An outside eye on your product with a bias toward revenue impact. I find the friction, prioritize the fixes, and hand you a roadmap your team can execute.</p>
+              <ul>
+                <li>Full UX and conversion audit</li>
+                <li>Competitive benchmarking</li>
+                <li>Prioritized design roadmap</li>
+              </ul>
+            </div>
+
+            <div class="service-card-v2 wow fadeInUp" data-wow-delay=".5s" id="service-design">
               <div class="num">03</div>
               <h5>End-to-End Product Design</h5>
-              <p>Research through pixel-perfect delivery — beautiful, functional, accessible products users actually love.</p>
+              <p>Research through pixel-perfect delivery. From zero to launch or feature to feature — I own the entire design layer.</p>
+              <ul>
+                <li>User research &amp; synthesis</li>
+                <li>Prototyping &amp; usability testing</li>
+                <li>Design system &amp; engineering handoff</li>
+              </ul>
             </div>
+
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Availability Signal -->
+    <div class="grad-line"></div>
+    <section class="avail-strip">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 col-md-7">
+            <div class="d-flex align-items-center flex-wrap" style="gap:16px;">
+              <span class="avail-pulse"></span>
+              <div>
+                <p class="avail-main">Currently taking on <strong>2 new client engagements.</strong></p>
+                <p class="avail-sub">Typical waitlist: 2–4 weeks.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-5 text-right mt-mobile">
+            <a href="mailto:dannielledandesign@gmail.com?subject=Availability%20Check" class="butn color curve"><span>Check Availability</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="grad-line"></div>
 
     <!-- Book teaser -->
     <section class="section-padding">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 md-mb50">
-            <span class="v2-section-label wow fadeIn" data-wow-delay=".3s">Coming Soon</span>
+            <span class="v2-section-label wow fadeIn" data-wow-delay=".3s">For Founders &amp; Product Leaders</span>
             <h3 class="wow color-font" data-wow-delay=".4s">The book is<br>in the works.</h3>
-            <p class="mt-20 mb-30" style="line-height:1.9; max-width:460px;">A practical guide at the intersection of design leadership, AI, and building products that actually matter. Written from the trenches — no fluff, real lessons.</p>
+            <p class="mt-20 mb-30" style="line-height:1.9; max-width:460px;">Design, Lead, Create — a no-fluff guide to building AI-powered products with design as the growth driver. Written for the exec who knows design matters but doesn't know how to wield it.</p>
             <form class="email-signup wow fadeInUp" data-wow-delay=".5s" onsubmit="handleSignup(event)">
               <input type="email" placeholder="Your email address" required>
               <button type="submit">Notify Me</button>
@@ -310,18 +581,18 @@
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Final CTA -->
     <section class="call-action section-padding bg-img" data-background="img/patrn.svg">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-lg-9">
             <div class="content sm-mb30">
-              <h6 class="wow" data-splitting>Let's Talk</h6>
-              <h2 class="wow" data-splitting>about your <br><b class="back-color">next project</b></h2>
+              <h6 class="wow" data-splitting>Let's build something that converts</h6>
+              <h2 class="wow" data-splitting>Ready to make design<br><b class="back-color">your growth lever?</b></h2>
             </div>
           </div>
           <div class="col-md-4 col-lg-3 valign">
-            <a href="mailto:dannielledandesign@gmail.com" class="butn bord curve wow fadeInUp" data-wow-delay=".5s"><span>Get In Touch</span></a>
+            <a href="mailto:dannielledandesign@gmail.com?subject=30-Min%20Strategy%20Call" class="butn color curve wow fadeInUp" data-wow-delay=".5s"><span>Book a 30-Min Strategy Call</span></a>
           </div>
         </div>
       </div>
@@ -364,7 +635,7 @@
                 <a href="https://twitter.com/dannielleydan"><i class="fab fa-twitter"></i></a>
               </div>
               <div class="copy-right">
-                <p>© 2025, Dannielle Dan</p>
+                <p>© 2026, Dannielle Dan</p>
                 <p style="font-size:8px;">You are a soul having a physical experience for a little while ♥ ♥</p>
               </div>
             </div>
@@ -380,12 +651,44 @@
   <script src="js/plugins.js"></script>
   <script src="js/scripts.js"></script>
   <script>
+    // Book signup handler
     function handleSignup(e) {
       e.preventDefault();
       var btn = e.target.querySelector('button');
       btn.textContent = '✓ You\'re on the list!';
       e.target.querySelector('input').value = '';
       setTimeout(function(){ btn.textContent = 'Notify Me'; }, 3000);
+    }
+
+    // Hero cycling text
+    (function() {
+      var phrases = ['B2B SaaS founders', 'Series A–C product teams', 'companies scaling with AI'];
+      var i = 0;
+      var el = document.getElementById('hero-cycle');
+      if (!el) return;
+      setInterval(function() {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.4s';
+        setTimeout(function() {
+          i = (i + 1) % phrases.length;
+          el.textContent = phrases[i];
+          el.style.opacity = '1';
+        }, 400);
+      }, 2800);
+    })();
+
+    // Problem Selector
+    function selectProblem(el) {
+      document.querySelectorAll('.problem-card').forEach(function(c) {
+        c.classList.remove('active');
+      });
+      el.classList.add('active');
+      var target = el.getAttribute('data-target');
+      var dest = document.querySelector(target);
+      if (dest) {
+        var offset = dest.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
     }
   </script>
 </body>
