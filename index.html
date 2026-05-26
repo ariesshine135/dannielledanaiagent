@@ -351,18 +351,20 @@
       margin-bottom: 22px;
     }
     .hero-v3 .hero-h1 {
-      font-size: clamp(34px, 4.5vw, 60px);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
+      font-size: clamp(38px, 5.2vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
       color: #fff;
       margin-bottom: 20px;
     }
     .hero-v3 .hero-h1 em {
       font-style: italic;
-      background: linear-gradient(90deg, #12c2e9, #c471ed);
+      background: linear-gradient(110deg, #00e5ff 0%, #c471ed 50%, #f64f59 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 28px rgba(18,194,233,0.45));
     }
     .hero-sub {
       font-size: 15px;
@@ -456,14 +458,15 @@
     .hero-img-col img {
       width: 100%;
       display: block;
-      filter: brightness(0.75) contrast(1.1) saturate(0.85);
+      border-radius: 6px;
     }
     .hero-img-col::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(18,194,233,0.08) 0%, transparent 40%, rgba(8,8,20,0.65) 100%);
+      background: linear-gradient(180deg, rgba(18,194,233,0.04) 0%, transparent 30%, rgba(5,8,16,0.4) 100%);
       pointer-events: none;
+      border-radius: 6px;
     }
     /* Process cards column */
     .hero-process-col {
@@ -654,7 +657,7 @@
 
             <!-- Dannielle photo -->
             <div class="hero-img-col">
-              <img src="img/slid/about.jpg" alt="Dannielle Dan — AI Product Strategist">
+              <img src="img/ai-face-v1.svg" alt="AI Design Strategist" id="hero-face-img">
             </div>
 
             <!-- Process cards column -->

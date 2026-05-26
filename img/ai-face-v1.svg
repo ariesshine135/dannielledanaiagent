@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 640" style="background:#060912;">
+  <defs>
+    <filter id="glow-sm-v1" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-lg-v1" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="bg-v1" cx="30%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#081428"/>
+      <stop offset="100%" stop-color="#040810"/>
+    </radialGradient>
+    <radialGradient id="face-fill-v1" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#0c1e3a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#050c1c" stop-opacity="0.97"/>
+    </radialGradient>
+    <linearGradient id="outline-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#12c2e9"/>
+      <stop offset="60%" stop-color="#12c2e9"/>
+      <stop offset="100%" stop-color="#12c2e9" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="420" height="640" fill="url(#bg-v1)"/>
+  <!-- Ambient face glow -->
+  <ellipse cx="155" cy="270" rx="130" ry="195" fill="#0a1f3f" opacity="0.45"/>
+  <ellipse cx="155" cy="270" rx="80" ry="130" fill="#0d2548" opacity="0.3"/>
+
+  <!-- FACE PROFILE — side view, facing left -->
+  <path d="
+    M 168,52
+    C 145,52 118,70 102,100
+    C 87,130 83,158 85,183
+    C 87,202 94,213 92,230
+    C 90,248 81,258 85,274
+    C 89,289 100,296 105,312
+    C 114,335 112,357 123,377
+    C 134,397 150,408 164,420
+    C 174,430 177,442 182,455
+    L 220,455
+    L 220,425
+    C 245,414 260,392 256,352
+    C 252,314 237,302 234,270
+    C 231,239 236,218 240,194
+    C 245,165 248,140 242,108
+    C 233,70 205,52 168,52 Z
+  "
+  fill="url(#face-fill-v1)"
+  stroke="url(#outline-grad)"
+  stroke-width="1.6"
+  filter="url(#glow-sm-v1)"
+  />
+
+  <!-- Inner face contour detail -->
+  <path d="M 162,68 C 140,74 118,92 106,118 C 95,142 92,166 94,190 C 96,208 102,218 100,234 C 97,250 91,258 94,272 C 97,284 106,290 109,304 C 116,322 115,342 125,360 C 134,376 147,384 159,395"
+    fill="none" stroke="#12c2e9" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Eye -->
+  <ellipse cx="118" cy="196" rx="13" ry="7" fill="none" stroke="#12c2e9" stroke-width="1.2" opacity="0.7" filter="url(#glow-sm-v1)"/>
+  <circle cx="118" cy="196" r="4" fill="#0d2040"/>
+  <circle cx="118" cy="196" r="2.5" fill="#12c2e9" opacity="0.9" filter="url(#glow-sm-v1)">
+    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Eye highlight -->
+  <circle cx="120" cy="194" r="1" fill="#fff" opacity="0.7"/>
+
+  <!-- Nose bridge -->
+  <path d="M 91,230 C 88,242 83,252 87,262 C 90,270 97,272 99,279" fill="none" stroke="#12c2e9" stroke-width="0.9" opacity="0.3"/>
+
+  <!-- Lips hint -->
+  <path d="M 90,315 C 96,318 104,319 108,316" fill="none" stroke="#12c2e9" stroke-width="0.8" opacity="0.25"/>
+
+  <!-- Cheekbone highlight -->
+  <path d="M 108,235 C 120,230 132,228 138,232" fill="none" stroke="#12c2e9" stroke-width="0.6" opacity="0.18"/>
+
+  <!-- ══════════════════════════════
+       CIRCUIT LINES from back of head
+       ══════════════════════════════ -->
+  <g stroke="#12c2e9" stroke-width="0.85" fill="none">
+    <!-- Track 1 -->
+    <polyline points="222,78  300,78  300,62  420,62" opacity="0.55"/>
+    <!-- Track 2 -->
+    <polyline points="232,102 268,102 268,88  420,88" opacity="0.5"/>
+    <!-- Track 3 -->
+    <polyline points="238,126 355,126 355,112 420,112" opacity="0.48"/>
+    <!-- Track 4 -->
+    <polyline points="242,150 420,150" opacity="0.45"/>
+    <!-- Track 5 -->
+    <polyline points="244,174 292,174 292,162 420,162" opacity="0.5"/>
+    <!-- Track 6 -->
+    <polyline points="245,198 370,198 370,184 420,184" opacity="0.42"/>
+    <!-- Track 7 -->
+    <polyline points="243,222 420,222" opacity="0.4"/>
+    <!-- Track 8 -->
+    <polyline points="241,246 318,246 318,234 420,234" opacity="0.45"/>
+    <!-- Track 9 -->
+    <polyline points="238,270 420,270" opacity="0.38"/>
+    <!-- Track 10 -->
+    <polyline points="235,294 348,294 348,280 420,280" opacity="0.4"/>
+    <!-- Track 11 -->
+    <polyline points="232,318 420,318" opacity="0.32"/>
+    <!-- Short connectors -->
+    <line x1="300" y1="62" x2="300" y2="50" opacity="0.3"/>
+    <line x1="355" y1="112" x2="355" y2="96" opacity="0.28"/>
+    <line x1="370" y1="184" x2="370" y2="168" opacity="0.3"/>
+    <line x1="318" y1="234" x2="318" y2="220" opacity="0.28"/>
+  </g>
+
+  <!-- NODES — cyan (small) -->
+  <g filter="url(#glow-lg-v1)">
+    <circle cx="300" cy="78" r="2.8" fill="#12c2e9">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="268" cy="102" r="2.5" fill="#12c2e9">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="292" cy="174" r="2.8" fill="#12c2e9">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="318" cy="246" r="2.5" fill="#12c2e9">
+      <animate attributeName="opacity" values="0.8;0.15;0.8" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="348" cy="294" r="2.8" fill="#12c2e9">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- NODES — purple/violet (larger, fewer) -->
+  <g filter="url(#glow-lg-v1)">
+    <circle cx="300" cy="62" r="4.5" fill="#7c3aed">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="355" cy="126" r="4" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="370" cy="198" r="4.5" fill="#7c3aed">
+      <animate attributeName="opacity" values="1;0.25;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="318" cy="234" r="4" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="348" cy="280" r="4.5" fill="#7c3aed">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Dots along face outline -->
+  <g filter="url(#glow-sm-v1)" fill="#12c2e9">
+    <circle cx="102" cy="155" r="1.8" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="215" r="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="265" r="1.8" opacity="0.55">
+      <animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="108" cy="315" r="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="134" cy="365" r="1.8" opacity="0.55">
+      <animate attributeName="opacity" values="0.55;0.1;0.55" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="164" cy="408" r="1.5" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;0.05;0.4" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Background stars/particles -->
+  <g fill="#12c2e9" opacity="0.3">
+    <circle cx="35" cy="45" r="1.2"/>
+    <circle cx="390" cy="30" r="1"/>
+    <circle cx="18" cy="320" r="0.8"/>
+    <circle cx="405" cy="420" r="1.2"/>
+    <circle cx="28" cy="580" r="1"/>
+    <circle cx="385" cy="560" r="0.8"/>
+    <circle cx="60" cy="610" r="1"/>
+    <circle cx="350" cy="600" r="0.8"/>
+  </g>
+  <g fill="#8b5cf6" opacity="0.25">
+    <circle cx="20" cy="120" r="1.2"/>
+    <circle cx="400" cy="170" r="1"/>
+    <circle cx="15" cy="460" r="1.2"/>
+    <circle cx="408" cy="490" r="0.8"/>
+  </g>
+</svg>
