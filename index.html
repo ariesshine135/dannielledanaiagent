@@ -317,8 +317,18 @@
     }
     .process-step-v2 + .process-step-v2 { margin-top: 10px; }
 
-    /* Nav CTA */
-    .navbar-nav .butn.color.curve { margin-top: -2px; }
+    /* Nav CTA — align vertically with other nav links */
+    .navbar-nav .nav-item .butn.color.curve {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 18px !important;
+      font-size: 13px !important;
+      line-height: 1;
+      vertical-align: middle;
+      margin-top: 0;
+      position: relative;
+      top: 0;
+    }
 
     /* Stats label */
     .stat-label { font-size: 12px; line-height: 1.5; }
