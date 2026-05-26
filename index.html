@@ -330,6 +330,196 @@
       top: 0;
     }
 
+    /* =============================================
+       HERO V3 — Two-column AI-native layout
+       ============================================= */
+    .hero-v3 {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-eyebrow {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #12c2e9;
+      display: block;
+      margin-bottom: 22px;
+    }
+    .hero-v3 .hero-h1 {
+      font-size: clamp(34px, 4.5vw, 60px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero-v3 .hero-h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, #12c2e9, #c471ed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 34px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 28px;
+      margin-bottom: 30px;
+      gap: 0;
+    }
+    .hero-stat-item {
+      flex: 1;
+      padding-right: 16px;
+    }
+    .hero-stat-item + .hero-stat-item {
+      border-left: 1px solid rgba(255,255,255,0.07);
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .hero-stat-num {
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #12c2e9, #c471ed, #f64f59);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      line-height: 1.1;
+    }
+    .hero-stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.3px;
+      margin-top: 4px;
+      display: block;
+      line-height: 1.4;
+    }
+    /* Hero trust */
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-label {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+      white-space: nowrap;
+    }
+    .hero-trust-logos {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .hero-trust-logos img {
+      height: 16px;
+      opacity: 0.28;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.3s;
+    }
+    .hero-trust-logos img:hover { opacity: 0.55; }
+    /* Right visual */
+    .hero-visual {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .hero-img-col {
+      flex: 1;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .hero-img-col img {
+      width: 100%;
+      display: block;
+      filter: brightness(0.75) contrast(1.1) saturate(0.85);
+    }
+    .hero-img-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18,194,233,0.08) 0%, transparent 40%, rgba(8,8,20,0.65) 100%);
+      pointer-events: none;
+    }
+    /* Process cards column */
+    .hero-process-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 175px;
+      flex-shrink: 0;
+    }
+    .hero-pc {
+      background: rgba(10,10,18,0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 15px;
+      border-radius: 5px;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+    .hero-pc:hover {
+      border-color: rgba(18,194,233,0.35);
+      background: rgba(18,194,233,0.06);
+    }
+    .hero-pc-num {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #12c2e9;
+      display: block;
+      margin-bottom: 7px;
+    }
+    .hero-pc h6 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .hero-pc p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.55;
+      margin: 0;
+    }
+    @media (max-width: 991px) {
+      .hero-v3 { padding: 110px 0 60px; }
+      .hero-visual { flex-direction: column; }
+      .hero-process-col { width: 100%; flex-direction: row; display: flex; flex-wrap: wrap; }
+      .hero-pc { flex: 1; min-width: 130px; }
+      .hero-left { margin-bottom: 50px; }
+    }
+    @media (max-width: 767px) {
+      .hero-stats { flex-wrap: wrap; gap: 16px; }
+      .hero-stat-item { flex: none; width: calc(50% - 8px); }
+      .hero-stat-item + .hero-stat-item { border-left: none; padding-left: 0; }
+    }
+
     /* Stats label */
     .stat-label { font-size: 12px; line-height: 1.5; }
 
@@ -396,49 +586,104 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════
-       HERO — Pain-first, executive framing
-       ═══════════════════════════════════ -->
-  <header class="pages-header circle-bg valign" style="min-height:100vh;">
+  <!-- ═══════════════════════════════════════════════════════
+       HERO V3 — Two-column: left text / right image + cards
+       ═══════════════════════════════════════════════════════ -->
+  <header class="hero-v3">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">
-          <div class="cont mt-100 mb-50">
+      <div class="row align-items-center">
 
-            <div class="wow fadeIn d-flex justify-content-center align-items-center flex-wrap" data-wow-delay=".3s" style="gap:14px; margin-bottom:28px;">
-              <span class="mono-label cyan" style="margin:0;">AI Product Strategy · Design Transformation · Executive Advisory</span>
-              <span class="avail-badge">● 2 engagements open</span>
+        <!-- LEFT: Text content -->
+        <div class="col-lg-6 hero-left wow fadeInUp" data-wow-delay=".2s">
+
+          <span class="hero-eyebrow">Your Strategic AI Agent</span>
+
+          <h1 class="hero-h1">
+            I help leaders design the <em>future</em><br>and build what's next.
+          </h1>
+
+          <p class="hero-sub">
+            Combining AI, design, and strategy to create systems that drive alignment, innovation, and measurable growth.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request" class="butn color curve">
+              <span>Book a Transformation Audit</span>
+            </a>
+            <a href="#pain-wall" class="butn bord curve" style="border-color:rgba(255,255,255,0.15);">
+              <span>See How I Fix It</span>
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">$214M</span>
+              <span class="hero-stat-label">Orby AI Acquisition Value</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">$3M</span>
+              <span class="hero-stat-label">Revenue Growth at Armorblox</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">15+</span>
+              <span class="hero-stat-label">B2B Products Shipped</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">10+</span>
+              <span class="hero-stat-label">Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Trust logos -->
+          <div class="hero-trust">
+            <span class="hero-trust-label">Trusted by founders &amp; leaders from</span>
+            <div class="hero-trust-logos">
+              <img src="img/clients/brands/microsoft.png" alt="Microsoft">
+              <img src="img/clients/brands/paypal.svg" alt="PayPal">
+              <img src="img/clients/brands/medallia.png" alt="Medallia">
+              <img src="img/clients/brands/Armorblox.png" alt="Armorblox">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Image + process cards -->
+        <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+          <div class="hero-visual">
+
+            <!-- Dannielle photo -->
+            <div class="hero-img-col">
+              <img src="img/slid/about.jpg" alt="Dannielle Dan — AI Product Strategist">
             </div>
 
-            <h1 class="color-font fw-700 wow" data-splitting>Your AI product is scaling.</h1>
-            <h1 class="color-font fw-700 wow" data-splitting>Your organization isn't.</h1>
-
-            <p class="hero-pain-line wow fadeIn" data-wow-delay=".6s">
-              Founders say: <span id="hero-cycle">"We're losing enterprise deals."</span>
-            </p>
-
-            <div class="wow fadeInUp" data-wow-delay=".8s">
-              <a href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request" class="butn color curve mr-20">
-                <span>Book a Transformation Audit</span>
-              </a>
-              <a href="#pain-wall" class="butn bord curve" style="border-color:rgba(196,113,237,0.4);">
-                <span style="background:linear-gradient(to right,#12c2e9,#c471ed,#f64f59); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">See How I Fix It</span>
-              </a>
+            <!-- Process cards column -->
+            <div class="hero-process-col">
+              <div class="hero-pc">
+                <span class="hero-pc-num">01</span>
+                <h6>Understand</h6>
+                <p>Diagnose your product gaps, trust failures, and adoption blockers.</p>
+              </div>
+              <div class="hero-pc">
+                <span class="hero-pc-num">02</span>
+                <h6>Strategize</h6>
+                <p>Align the org and design the right transformation path.</p>
+              </div>
+              <div class="hero-pc">
+                <span class="hero-pc-num">03</span>
+                <h6>Build</h6>
+                <p>Systems and experiences that scale with your AI product.</p>
+              </div>
+              <div class="hero-pc">
+                <span class="hero-pc-num">04</span>
+                <h6>Evolve</h6>
+                <p>Measure outcomes and optimize for enterprise adoption.</p>
+              </div>
             </div>
 
           </div>
         </div>
-        <div class="col-lg-10">
-          <div class="img wow fadeInUp" data-wow-delay="1s">
-            <img src="img/slid/about.jpg" alt="Dannielle Dan">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="half sub-bg">
-      <div class="circle-color">
-        <div class="gradient-circle"></div>
-        <div class="gradient-circle two"></div>
+
       </div>
     </div>
   </header>
