@@ -11,7 +11,7 @@
 //  5. Copy the web app URL and paste it below (replace the placeholder)
 // ─────────────────────────────────────────────────────────────
 
-var GOOGLE_SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+var GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwGlFDXgk7PQM0cN7Am5yQH6M4U4OpZdexTw0AY128k1kp0k18jmbPZdzuL0tfLua8S/exec';
 
 function handleSignup(e, confirmId) {
   e.preventDefault();
