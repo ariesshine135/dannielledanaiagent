@@ -317,17 +317,25 @@
     }
     .process-step-v2 + .process-step-v2 { margin-top: 10px; }
 
+    /* Navbar alignment */
+    .navbar-nav { align-items: center !important; }
+
     /* Nav CTA — align vertically with other nav links */
     .navbar-nav .nav-item .butn.color.curve {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 18px !important;
-      font-size: 13px !important;
-      line-height: 1;
-      vertical-align: middle;
-      margin-top: 0;
-      position: relative;
-      top: 0;
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 7px 20px !important;
+      font-size: 12px !important;
+      line-height: 1 !important;
+      position: static !important;
+      top: auto !important;
+      transform: none !important;
+      margin-top: 0 !important;
+      vertical-align: middle !important;
+    }
+    .navbar-nav .nav-item .butn.color.curve span,
+    .navbar-nav .nav-item .butn.color.curve:not(:has(span)) {
+      position: static !important;
     }
 
     /* =============================================
@@ -573,8 +581,8 @@
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="book.html">Book</a></li>
           <li class="nav-item"><a class="nav-link" href="mailto:dannielledandesign@gmail.com">Contact</a></li>
-          <li class="nav-item ml-20">
-            <a class="nav-link butn color curve" href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request" style="padding:8px 20px; font-size:12px;">Transformation Audit</a>
+          <li class="nav-item ml-20" style="display:flex; align-items:center;">
+            <a class="butn color curve" href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request">Transformation Audit</a>
           </li>
         </ul>
       </div>
