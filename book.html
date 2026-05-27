@@ -65,7 +65,7 @@
             <p class="mt-20 mb-10 wow fadeIn" data-wow-delay=".5s" style="color:#a4a7b1; font-size:15px; line-height:1.9; max-width:460px;">A practitioner's guide to leading design in the age of AI — written for designers who want to do their best work and lead teams that do the same.</p>
             <p class="mb-30 wow fadeIn" data-wow-delay=".6s" style="color:rgba(255,255,255,0.3); font-size:13px; line-height:1.8;">Born from 10+ years of designing and leading at the intersection of human experience and artificial intelligence. No fluff — just real lessons from the trenches.</p>
             <p class="wow fadeIn" data-wow-delay=".65s" style="font-size:12px; font-weight:600; color:#fff; margin-bottom:10px;">Get notified when it launches:</p>
-            <form class="email-signup wow fadeInUp" data-wow-delay=".7s" onsubmit="handleSignup(event, 'confirm1')">
+            <form class="email-signup wow fadeInUp" data-wow-delay=".7s" onsubmit="handleSignup(event,'confirm1')" data-source="book-hero">
               <input type="email" placeholder="your@email.com" required>
               <button type="submit">Notify Me</button>
             </form>
@@ -169,7 +169,7 @@
             <div class="content">
               <h6 class="wow" data-splitting>Don't Miss the Launch</h6>
               <h2 class="wow" data-splitting>Be first in line. <br><b class="back-color">Join the list.</b></h2>
-              <form class="email-signup wow fadeInUp mt-30" data-wow-delay=".4s" onsubmit="handleSignup(event, 'confirm2')" style="max-width:400px;">
+              <form class="email-signup wow fadeInUp mt-30" data-wow-delay=".4s" onsubmit="handleSignup(event,'confirm2')" data-source="book-bottom" style="max-width:400px;">
                 <input type="email" placeholder="your@email.com" required>
                 <button type="submit">Join the List</button>
               </form>
@@ -204,15 +204,6 @@
   <script src="js/jquery-migrate-3.0.0.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/scripts.js"></script>
-  <script>
-    function handleSignup(e, confirmId) {
-      e.preventDefault();
-      var btn = e.target.querySelector('button');
-      document.getElementById(confirmId).style.display = 'block';
-      e.target.querySelector('input').value = '';
-      btn.textContent = '✓ Done!';
-      setTimeout(function(){ btn.textContent = 'Notify Me'; }, 3000);
-    }
-  </script>
+  <script src="js/signup.js"></script>
 </body>
 </html>

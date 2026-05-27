@@ -1095,10 +1095,11 @@
             <span class="mono-label">Intellectual Property in Progress</span>
             <h3 class="wow color-font" data-wow-delay=".4s" style="font-size:clamp(28px,3.5vw,44px); line-height:1.15; letter-spacing:-0.02em;">The book is<br>in the works.</h3>
             <p class="mt-20 mb-30" style="line-height:1.9; max-width:460px; font-size:14px; color:rgba(255,255,255,0.65);">Design, Lead, Create — a no-fluff guide to building AI-powered products with design as the strategic growth driver. Written for the exec who knows design matters but doesn't know how to wield it as a competitive advantage.</p>
-            <form class="email-signup wow fadeInUp" data-wow-delay=".5s" onsubmit="handleSignup(event)">
+            <form class="email-signup wow fadeInUp" data-wow-delay=".5s" onsubmit="handleSignup(event,'confirm-home')" data-source="homepage">
               <input type="email" placeholder="Your email address" required>
               <button type="submit">Notify Me</button>
             </form>
+            <p id="confirm-home" style="display:none; font-size:12px; color:#12c2e9; margin-top:10px; font-weight:600;">✓ You're on the list. Thank you!</p>
             <p class="mt-10" style="font-size:11px; color:rgba(255,255,255,0.45);">No spam. Just the launch announcement.</p>
             <div class="mt-30">
               <a href="book.html" class="butn bord curve wow fadeInUp" data-wow-delay=".6s"><span>Learn More</span></a>
@@ -1167,16 +1168,8 @@
   <script src="js/jquery-migrate-3.0.0.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/signup.js"></script>
   <script>
-    // Book signup
-    function handleSignup(e) {
-      e.preventDefault();
-      var btn = e.target.querySelector('button');
-      btn.textContent = '✓ You\'re on the list!';
-      e.target.querySelector('input').value = '';
-      setTimeout(function(){ btn.textContent = 'Notify Me'; }, 3000);
-    }
-
     // Hero cycling — founder pain points
     (function() {
       var phrases = [
