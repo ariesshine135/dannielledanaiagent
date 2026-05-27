@@ -11,6 +11,21 @@
   <link rel="stylesheet" href="css/plugins.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .artwork-item {
+      overflow: hidden;
+      border-radius: 5px;
+      background: #0d0d0f;
+    }
+    .artwork-item img {
+      transition: transform 0.5s ease, opacity 0.4s ease;
+      opacity: 0.88;
+    }
+    .artwork-item:hover img {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 
@@ -52,26 +67,6 @@
     </div>
   </div>
 
-  <!-- Page header -->
-  <header class="pages-header circle-bg valign">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="cont mt-100 mb-50">
-            <p style="font-size:11px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:#12c2e9; margin-bottom:15px;" class="wow fadeIn">Selected Work</p>
-            <h1 class="color-font fw-700 wow" data-splitting>Case Studies</h1>
-            <p class="mt-20 wow fadeIn" data-wow-delay=".5s" style="color:#a4a7b1; font-size:16px; max-width:540px; line-height:1.9;">10+ years of shipping B2B products across AI, fintech, ed-tech, and customer experience.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="half sub-bg">
-      <div class="circle-color">
-        <div class="gradient-circle"></div>
-        <div class="gradient-circle two"></div>
-      </div>
-    </div>
-  </header>
 
   <div class="main-content">
 
@@ -211,6 +206,75 @@
             <a href="project-details-Microsoft-classroom.html" class="butn bord curve"><span>View Case Study</span></a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         ARTWORK — Beyond Design
+         ═══════════════════════════════ -->
+    <section class="section-padding">
+      <div class="container">
+
+        <div class="row mb-60">
+          <div class="col-12">
+            <span style="font-family:'Courier New',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#12c2e9; display:block; margin-bottom:14px;">Beyond Design</span>
+            <h3 class="color-font wow" style="font-size:clamp(28px,3.5vw,44px); line-height:1.15; letter-spacing:-0.02em;">Art &amp; Creative Work</h3>
+            <p class="mt-15" style="font-size:14px; color:rgba(255,255,255,0.62); max-width:520px; line-height:1.9;">Outside of product design, I paint, draw, and animate. This is a glimpse into the creative practice that informs everything else I do.</p>
+          </div>
+        </div>
+
+        <!-- Row 1: collage full-width + self portrait -->
+        <div class="row mb-20">
+          <div class="col-lg-8 col-md-7 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".1s">
+              <img src="img/art/ArtworkCollage.jpg" alt="Artwork Collage — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-5 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".2s" style="height:100%;">
+              <img src="img/art/self-portrait.jpg" alt="Self Portrait — Dannielle Dan" style="width:100%; height:100%; object-fit:cover; border-radius:5px; display:block;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: animated painting + leaves + car gif -->
+        <div class="row mb-20">
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".1s">
+              <img src="img/art/painting_5.gif" alt="Painting — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".2s">
+              <img src="img/art/LeavesByDannielle.jpg" alt="Leaves — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".3s">
+              <img src="img/art/a-car-animated.gif" alt="Car — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: eMemo + christmas + highschool -->
+        <div class="row">
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".1s">
+              <img src="img/art/eMemo_1.jpg" alt="eMemo — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".2s">
+              <img src="img/art/christmas.jpg" alt="Christmas — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 mb-20">
+            <div class="artwork-item wow fadeIn" data-wow-delay=".3s">
+              <img src="img/art/highschool.jpg" alt="Highschool — Dannielle Dan" style="width:100%; border-radius:5px; display:block;">
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
