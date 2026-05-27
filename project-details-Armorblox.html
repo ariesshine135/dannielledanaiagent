@@ -29,6 +29,7 @@
 
     <!-- Core Style Css -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
 </head>
 
@@ -77,36 +78,28 @@
     <!-- ==================== Start Navbar ==================== -->
 	
 	   <nav class="navbar navbar-expand-lg">
-        <div class="container">
-
-            <!-- Logo -->
-            <a class="logo" href="/">
-                <img src="img/Logo_DannielleDan.svg" alt="logo">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-bar"><i class="fas fa-bars"></i></span>
-            </button>
-
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="works.html">Works</a>
-                    </li>
-               
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="img/Logo_DannielleDan.svg" alt="Dannielle Dan">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
+        <span class="icon-bar"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="book.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="mailto:dannielledandesign@gmail.com">Contact</a></li>
+          <li class="nav-item ml-20" style="display:flex; align-items:center;">
+            <a class="butn color curve" href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request">Transformation Audit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
    <!-- ==================== End Navbar ==================== -->
 
