@@ -3,7 +3,7 @@
 //  Uses GET + URL params (more reliable with no-cors than POST/JSON)
 // ─────────────────────────────────────────────────────────────
 
-var GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwGlFDXgk7PQM0cN7Am5yQH6M4U4OpZdexTw0AY128k1kp0k18jmbPZdzuL0tfLua8S/exec';
+var GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzWlGTIWTgT5qDYGIPp3yeRhy32kzqyhITIwTF51FGDckiwy0n69EG68zZa_2FWKTWm/exec';
 
 function handleSignup(e, confirmId) {
   e.preventDefault();
