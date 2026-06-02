@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────
 //  Book signup → Google Sheets
-//  Uses GET + URL params (more reliable with no-cors than POST/JSON)
+//  Uses image beacon — bypasses all CORS/redirect restrictions
 // ─────────────────────────────────────────────────────────────
 
 var GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzWlGTIWTgT5qDYGIPp3yeRhy32kzqyhITIwTF51FGDckiwy0n69EG68zZa_2FWKTWm/exec';
@@ -18,14 +18,16 @@ function handleSignup(e, confirmId) {
   btn.textContent = 'Saving…';
   btn.disabled = true;
 
-  // GET with URL params avoids CORS preflight issues entirely
-  var url = GOOGLE_SHEET_URL
+  // Image beacon: browser fires the GET request with zero CORS friction
+  var beacon = new Image();
+  beacon.src = GOOGLE_SHEET_URL
     + '?email='  + encodeURIComponent(email)
     + '&source=' + encodeURIComponent(source);
 
-  fetch(url, { method: 'GET', mode: 'no-cors' })
-    .then(function()  { _done(form, btn, confirmId, originalLabel); })
-    .catch(function() { _done(form, btn, confirmId, originalLabel); });
+  // Show confirmation after a short delay (enough for the request to fire)
+  setTimeout(function() {
+    _done(form, btn, confirmId, originalLabel);
+  }, 800);
 }
 
 function _done(form, btn, confirmId, originalLabel) {
