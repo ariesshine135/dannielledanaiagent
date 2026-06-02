@@ -13,7 +13,17 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Protected / NDA tiles */
-    .item-img.protected-work { position: relative; }
+    .item-img.protected-work { position: relative; overflow: hidden; }
+    .item-img.protected-work .img-hover {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .item-img.protected-work:hover .img-hover { opacity: 1; }
     .item-img.protected-work .protected-overlay {
       position: absolute;
       inset: 0;
@@ -162,18 +172,19 @@
 
           <div class="col-lg-4 col-md-6 items">
             <div class="item-img protected-work wow fadeInUp" data-wow-delay=".2s">
-              <img src="img/agent2.png" alt="Confidential UX Project">
+              <img src="img/agent2.png" alt="Orby AI — AI Agent Design">
+              <img class="img-hover" src="img/agent2.gif" alt="Orby AI animated">
               <span class="nda-badge">🔒 Under NDA</span>
               <div class="protected-overlay">
                 <span class="lock-icon">🔒</span>
                 <span class="overlay-label">Protected Work</span>
                 <span class="overlay-sub">Full case study available to qualified companies upon request.</span>
-                <a class="overlay-cta" href="mailto:dannielledandesign@gmail.com?subject=NDA%20Work%20Request%20—%20UX%20Design%20Project">Request Access</a>
+                <a class="overlay-cta" href="mailto:dannielledandesign@gmail.com?subject=NDA%20Work%20Request%20—%20Orby%20AI">Request Access</a>
               </div>
             </div>
             <div class="cont">
-              <h6>Enterprise UX Design — AI Workflow</h6>
-              <span>Confidential · <a href="mailto:dannielledandesign@gmail.com?subject=NDA%20Work%20Request%20—%20UX%20Design%20Project">Contact to view</a></span>
+              <h6>Orby AI — AI Agent Design</h6>
+              <span>Confidential · <a href="mailto:dannielledandesign@gmail.com?subject=NDA%20Work%20Request%20—%20Orby%20AI">Contact to view</a></span>
             </div>
           </div>
 
