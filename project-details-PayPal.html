@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="PayPal Customers — Case Study by Dannielle Dan" />
+  <title>PayPal — Dannielle Dan</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/plugins.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Light-theme mockup wrapper ── */
+    .pp-mockup-wrap {
+      background: #F7F9FC;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 30px 0;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    /* ── PayPal token colours ── */
+    :root {
+      --pp-navy:  #012169;
+      --pp-blue:  #0070BA;
+      --pp-sky:   #009CDE;
+      --pp-sky-light: #E8F7FD;
+      --pp-cream: #FAF8F5;
+      --pp-gold:  #FFB700;
+      --pp-green: #00CF92;
+      --pp-green-dark: #00956A;
+      --pp-text:  #1A1F36;
+      --pp-muted: #545D6B;
+      --pp-border:#E3E8EF;
+      --pp-surface:#F7F9FC;
+      --radius:   10px;
+    }
+    /* ── Inside-mockup styles ── */
+    .pp-topnav { background:#fff; border-bottom:1px solid var(--pp-border); display:flex; align-items:center; padding:0 24px; height:52px; gap:24px; }
+    .pp-topnav-logo { font-size:15px; font-weight:800; color:var(--pp-blue); display:flex; align-items:center; gap:6px; }
+    .pp-topnav-items { display:flex; gap:4px; flex:1; }
+    .pp-nav-item { padding:6px 12px; font-size:13px; font-weight:500; color:var(--pp-muted); border-radius:6px; }
+    .pp-nav-item.active { color:var(--pp-blue); font-weight:600; border-bottom:2px solid var(--pp-blue); border-radius:0; }
+    .pp-avatar { width:28px; height:28px; border-radius:50%; background:var(--pp-blue); color:white; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .pp-layout { display:flex; min-height:400px; background:var(--pp-surface); }
+    .pp-main { flex:1; padding:24px; overflow:hidden; }
+    .pp-page-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+    .pp-page-title { font-size:20px; font-weight:700; color:var(--pp-text); }
+    .pp-page-sub { font-size:13px; color:var(--pp-muted); margin-top:2px; }
+    .pp-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:20px; font-size:13px; font-weight:600; cursor:pointer; border:none; }
+    .pp-btn-primary { background:var(--pp-navy); color:white; }
+    .pp-btn-secondary { background:white; color:var(--pp-navy); border:1.5px solid var(--pp-border); }
+    .pp-toolbar { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+    .pp-search { flex:1; display:flex; align-items:center; gap:8px; background:white; border:1px solid var(--pp-border); border-radius:6px; padding:7px 12px; font-size:13px; color:var(--pp-muted); }
+    .pp-filter-chip { display:flex; align-items:center; gap:6px; background:white; border:1px solid var(--pp-border); border-radius:6px; padding:7px 12px; font-size:12px; color:var(--pp-muted); }
+    .pp-table { width:100%; border-collapse:collapse; background:white; border-radius:var(--radius); overflow:hidden; box-shadow:0 1px 4px rgba(1,33,105,0.06); }
+    .pp-table thead { background:var(--pp-surface); }
+    .pp-table th { padding:10px 14px; text-align:left; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; color:var(--pp-muted); border-bottom:1px solid var(--pp-border); }
+    .pp-table td { padding:12px 14px; font-size:13px; color:var(--pp-text); border-bottom:1px solid #F0F2F5; vertical-align:middle; }
+    .pp-table tr:last-child td { border-bottom:none; }
+    .customer-name { font-weight:600; color:var(--pp-navy); }
+    .browser-chrome { background:#E8EAED; border-radius:10px 10px 0 0; padding:10px 16px; display:flex; align-items:center; gap:8px; border:1px solid #D1D5DB; border-bottom:none; }
+    .browser-dot { width:10px; height:10px; border-radius:50%; }
+    .browser-dot.red { background:#FF5F57; }
+    .browser-dot.yellow { background:#FFBD2E; }
+    .browser-dot.green { background:#28CA41; }
+    .browser-url { flex:1; margin:0 12px; background:white; border-radius:4px; padding:4px 10px; font-size:11px; color:var(--pp-muted); font-family:monospace; }
+    .browser-body { border:1px solid #D1D5DB; border-top:none; border-radius:0 0 10px 10px; overflow:hidden; }
+    .pp-card { background:white; border:1px solid var(--pp-border); border-radius:var(--radius); box-shadow:0 1px 4px rgba(1,33,105,0.06); margin-bottom:14px; }
+    .pp-card-header { padding:14px 18px; border-bottom:1px solid var(--pp-border); display:flex; align-items:center; justify-content:space-between; }
+    .pp-card-title { font-size:13px; font-weight:700; color:var(--pp-text); }
+    .pp-card-action { font-size:12px; color:var(--pp-sky); font-weight:600; cursor:pointer; }
+    .pp-card-body { padding:16px 18px; }
+    .field-row { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; }
+    .field-row:last-child { margin-bottom:0; }
+    .field-label { font-size:12px; color:var(--pp-muted); }
+    .field-value { font-size:13px; font-weight:500; color:var(--pp-text); text-align:right; }
+    .source-tag { display:inline-flex; align-items:center; gap:4px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; padding:2px 6px; border-radius:3px; margin-left:6px; }
+    .source-braintree { background:#E8F0FE; color:#3367D6; }
+    .source-paypal { background:var(--pp-sky-light); color:var(--pp-sky); }
+    .detail-grid { display:grid; grid-template-columns:1fr 300px; gap:16px; }
+    .customer-profile-header { background:linear-gradient(135deg,var(--pp-blue) 0%,#0047AB 100%); padding:20px 18px; color:white; display:flex; align-items:center; gap:16px; border-radius:var(--radius) var(--radius) 0 0; }
+    .customer-avatar-lg { width:52px; height:52px; border-radius:50%; background:rgba(255,255,255,.2); font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; border:2px solid rgba(255,255,255,.4); }
+    .customer-profile-name { font-size:17px; font-weight:700; margin-bottom:3px; }
+    .customer-profile-meta { font-size:12px; color:rgba(255,255,255,.7); }
+    .customer-profile-source { margin-left:auto; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+    .pm-item { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--pp-border); }
+    .pm-item:last-child { border-bottom:none; }
+    .pm-icon { width:36px; height:24px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; letter-spacing:.5px; }
+    .pm-visa { background:#1A1F71; color:white; }
+    .pm-mc { background:#EB001B; color:white; }
+    .pm-ach { background:#2D7D46; color:white; }
+    .pm-info { flex:1; }
+    .pm-name { font-size:13px; font-weight:600; color:var(--pp-text); }
+    .pm-detail { font-size:11px; color:var(--pp-muted); }
+    .pm-vault-badge { display:flex; align-items:center; gap:4px; font-size:11px; font-weight:600; color:#00956A; }
+    .txn-row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--pp-border); }
+    .txn-row:last-child { border-bottom:none; }
+    .txn-dot { width:8px; height:8px; border-radius:50%; background:var(--pp-green); flex-shrink:0; }
+    .txn-dot.refund { background:var(--pp-muted); }
+    .txn-info { flex:1; }
+    .txn-name { font-size:12px; font-weight:600; color:var(--pp-text); }
+    .txn-date { font-size:11px; color:var(--pp-muted); }
+    .txn-amount { font-size:13px; font-weight:700; color:var(--pp-text); }
+    .txn-amount.negative { color:var(--pp-muted); }
+    /* ── Dark-theme stat / impact cards ── */
+    .pp-dark-stat { padding:30px; border:1px solid rgba(255,255,255,0.07); border-radius:6px; background:rgba(255,255,255,0.02); }
+    .pp-dark-stat-num { font-size:42px; font-weight:900; letter-spacing:-2px; line-height:1; margin-bottom:10px; color:#fff; }
+    .pp-dark-stat-label { font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); margin-bottom:6px; }
+    .pp-dark-stat-desc { font-size:12px; color:rgba(255,255,255,0.42); line-height:1.6; }
+    .pp-dark-stat.cyan .pp-dark-stat-num { color:#12c2e9; }
+    .pp-dark-stat.green .pp-dark-stat-num { color:#00CF92; }
+    .pp-dark-stat.gold .pp-dark-stat-num { color:#FFB700; }
+    /* ── Timeline (dark) ── */
+    .pp-timeline { margin-top:40px; position:relative; padding-left:28px; }
+    .pp-timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:rgba(255,255,255,0.08); }
+    .pp-timeline-item { position:relative; margin-bottom:36px; }
+    .pp-timeline-dot { position:absolute; left:-34px; top:5px; width:13px; height:13px; border-radius:50%; background:#12c2e9; border:3px solid #0d0d0f; box-shadow:0 0 0 2px #12c2e9; }
+    .pp-timeline-date { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#12c2e9; margin-bottom:5px; }
+    .pp-timeline-title { font-size:16px; font-weight:700; color:#fff; margin-bottom:8px; letter-spacing:-.2px; }
+    .pp-timeline-desc { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.8; }
+    /* ── Taxonomy (dark) ── */
+    .taxonomy-group { margin-bottom:20px; }
+    .taxonomy-group-name { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.4); margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .taxonomy-fields { display:flex; flex-wrap:wrap; gap:8px; }
+    .taxonomy-field { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border-radius:6px; font-size:12px; font-weight:500; border:1px solid; }
+    .tf-required { background:rgba(99,102,241,0.12); border-color:rgba(99,102,241,0.3); color:#a5b4fc; }
+    .tf-optional { background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.5); }
+    .tf-braintree { background:rgba(51,103,214,0.12); border-color:rgba(51,103,214,0.3); color:#93b4f8; }
+    .tf-hyperwallet { background:rgba(230,124,0,0.12); border-color:rgba(230,124,0,0.3); color:#f4c07c; }
+    .tf-vault { background:rgba(0,150,106,0.12); border-color:rgba(0,150,106,0.3); color:#6ee7b7; }
+    .tf-dot { width:6px; height:6px; border-radius:50%; background:currentColor; flex-shrink:0; }
+    /* ── Vault diagram (dark) ── */
+    .vault-diagram-dark { background:rgba(255,255,255,0.03); border-radius:8px; padding:40px; margin-top:36px; border:1px solid rgba(255,255,255,0.07); }
+    .vault-flow { display:flex; align-items:center; gap:0; justify-content:center; }
+    .vault-node { text-align:center; flex:1; }
+    .vault-node-icon { width:52px; height:52px; border-radius:12px; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:20px; }
+    .vault-node-label { font-size:12px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .vault-node-sub { font-size:11px; color:rgba(255,255,255,0.45); line-height:1.4; }
+    .vault-arrow { color:rgba(255,255,255,0.25); font-size:18px; padding:0 4px; margin-bottom:34px; flex-shrink:0; }
+    /* ── Quote block (dark) ── */
+    .pp-quote { background:rgba(18,194,233,0.04); border-left:3px solid #12c2e9; border-radius:0 6px 6px 0; padding:28px 32px; margin:36px 0; position:relative; }
+    .pp-quote p { font-size:17px; font-style:italic; color:rgba(255,255,255,0.8); line-height:1.8; margin-bottom:12px; }
+    .pp-quote .attr { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.35); }
+    /* ── Acquisition cards (dark) ── */
+    .acq-card-dark { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:28px; }
+    .acq-card-dark .acq-logo { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.35); margin-bottom:8px; }
+    .acq-card-dark .acq-name { font-size:22px; font-weight:800; color:#fff; margin-bottom:10px; }
+    .acq-card-dark .acq-tag { display:inline-block; background:rgba(18,194,233,0.08); color:#12c2e9; font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:16px; border:1px solid rgba(18,194,233,0.2); }
+    .acq-card-dark p { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.8; margin-bottom:16px; }
+    .acq-meta-dark { border-top:1px solid rgba(255,255,255,0.07); padding-top:16px; }
+    .acq-meta-row { display:flex; justify-content:space-between; margin-bottom:8px; }
+    .acq-meta-key { font-size:11px; color:rgba(255,255,255,0.3); }
+    .acq-meta-val { font-size:11px; font-weight:600; color:rgba(255,255,255,0.7); text-align:right; }
+    /* ── Fit cards (dark) ── */
+    .pp-tier-card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:28px; }
+    .pp-tier-card .tier-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+    .pp-tier-card h5 { font-size:15px; font-weight:700; color:#fff; margin-bottom:10px; }
+    .pp-tier-card p { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.8; margin-bottom:12px; }
+    .pp-tier-card ul { list-style:none; padding:0; margin:0; }
+    .pp-tier-card ul li { font-size:12px; color:rgba(255,255,255,0.45); padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.04); line-height:1.6; }
+    .pp-tier-card ul li:last-child { border-bottom:none; }
+    @media(max-width:767px) { .detail-grid { grid-template-columns:1fr; } .vault-flow { flex-wrap:wrap; } }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+  </div>
+  <div id="preloader"></div>
+
+  <div class="progress-wrap cursor-pointer">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="img/Logo_DannielleDan.svg" alt="Dannielle Dan"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
+        <span class="icon-bar"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="book.html">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="mailto:dannielledandesign@gmail.com">Contact</a></li>
+          <li class="nav-item ml-20" style="display:flex; align-items:center;">
+            <a class="butn color curve" href="mailto:dannielledandesign@gmail.com?subject=Transformation%20Audit%20Request">Transformation Audit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+    <!-- ── Hero ── -->
+    <section class="page-header proj-det valign" style="background:linear-gradient(135deg,#012169 0%,#003087 50%,#0059B3 100%); min-height:420px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-9">
+            <div class="cont">
+              <h6>Case Study</h6>
+              <h2>PayPal — Customers</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="item mt-30">
+              <h6>Product</h6>
+              <p>PayPal Commerce Platform</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="item mt-30">
+              <h6>Date</h6>
+              <p>2020 – 2023</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="item mt-30">
+              <h6>Role</h6>
+              <p>Senior Product Designer</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="item mt-30">
+              <h6>Categories</h6>
+              <p>Fin-tech &nbsp;·&nbsp; B2B SaaS &nbsp;·&nbsp; Enterprise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 01 Summary ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>01 </span>Summary</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <div class="text js-scroll__content">
+              <p class="extra-text">At PayPal I was a Senior Product Designer on the Commerce Platform — building the unified <strong>Customers</strong> feature that spanned Braintree, Hyperwallet, and PayPal's core merchant dashboard. The feature became the foundation for vault-powered repeat commerce across PayPal's 35 million active merchants.</p>
+              <ul class="smp-list mt-30">
+                <li>End-to-end UX ownership: research, IA, interaction design, prototyping, design-system contribution, and engineering handoff</li>
+                <li>Unified three separate customer data models (PayPal, Braintree, Hyperwallet) into a single coherent merchant-facing UI</li>
+                <li>Designed the vault discovery experience that turned a developer-only capability into a merchant growth lever</li>
+                <li>Conducted 40+ merchant interviews across SMB, mid-market, and enterprise tiers to shape the field taxonomy and progressive-disclosure model</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 Impact ── -->
+    <section class="intro-section section-padding sub-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>02 </span>Impact</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <div class="row mt-10">
+              <div class="col-md-6 mb-30">
+                <div class="pp-dark-stat cyan">
+                  <div class="pp-dark-stat-num">~$47B</div>
+                  <div class="pp-dark-stat-label">Vault-attributed GMV (est.)</div>
+                  <div class="pp-dark-stat-desc">Annual gross merchandise volume enabled by vaulted customer profiles across Braintree merchants</div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-30">
+                <div class="pp-dark-stat gold">
+                  <div class="pp-dark-stat-num">+31%</div>
+                  <div class="pp-dark-stat-label">Revenue lift for vault merchants</div>
+                  <div class="pp-dark-stat-desc">Average revenue increase for merchants who actively leveraged vaulted customers vs. the non-vault cohort</div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-30">
+                <div class="pp-dark-stat green">
+                  <div class="pp-dark-stat-num">~35M</div>
+                  <div class="pp-dark-stat-label">Customers vaulted</div>
+                  <div class="pp-dark-stat-desc">Unique end-customers with at least one payment method stored in the unified vault</div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-30">
+                <div class="pp-dark-stat">
+                  <div class="pp-dark-stat-num" style="color:#c471ed;">42%</div>
+                  <div class="pp-dark-stat-label">Drop in checkout abandonment</div>
+                  <div class="pp-dark-stat-desc">For returning customers checking out via vaulted payment methods vs. non-vaulted repeat buyers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 The Problem ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>03 </span>The Problem</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8 mb-30">
+            <p class="extra-text">PayPal serves over 35 million active merchants — but they weren't using one PayPal. They were navigating three separate portals: <strong>PayPal</strong> for standard checkout, <strong>Braintree</strong> for developer-led payment processing and vault, and <strong>Hyperwallet</strong> for marketplace payouts. Each had its own login. Each had its own definition of what a "customer" was.</p>
+            <p class="mt-20" style="color:rgba(255,255,255,0.55); line-height:1.9; font-size:15px;">A merchant using all three had to maintain three separate customer records for the same person, reconcile transaction histories across disconnected dashboards, and context-switch between products that looked and behaved nothing alike. There was no single source of truth.</p>
+
+            <div class="pp-quote mt-40">
+              <p>"The core design challenge: unify three separate portals, three separate logins, and three separate customer data models into a single coherent experience — without disrupting the 35 million merchants already relying on each product independently."</p>
+            </div>
+
+            <!-- Three product cards -->
+            <div class="row mt-30">
+              <div class="col-md-4 mb-20">
+                <div class="acq-card-dark">
+                  <div class="acq-logo">PayPal Core</div>
+                  <div class="acq-name">PayPal</div>
+                  <p>Standard checkout, invoicing, and P2P payments. Primary portal for SMBs and consumer-facing sellers.</p>
+                  <div style="font-size:12px; color:rgba(255,80,80,0.8); font-weight:600;">✕ Unique login required<br>✕ Isolated customer records</div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-20">
+                <div class="acq-card-dark">
+                  <div class="acq-logo">Acquired 2013</div>
+                  <div class="acq-name">Braintree</div>
+                  <p>Developer-first payment gateway with vault tokenization. Portal for mid-market and enterprise merchants.</p>
+                  <div style="font-size:12px; color:rgba(255,80,80,0.8); font-weight:600;">✕ Unique login required<br>✕ Isolated customer records</div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-20">
+                <div class="acq-card-dark">
+                  <div class="acq-logo">Acquired 2018</div>
+                  <div class="acq-name">Hyperwallet</div>
+                  <p>Global payout infrastructure for marketplaces paying sellers at scale worldwide.</p>
+                  <div style="font-size:12px; color:rgba(255,80,80,0.8); font-weight:600;">✕ Unique login required<br>✕ Isolated customer records</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 Design Process ── -->
+    <section class="intro-section section-padding sub-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>04 </span>Design Process</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">The design process wasn't just visual — it was fundamentally about information architecture. Before a single screen was drawn, the work was to understand what a "customer" meant to a PayPal merchant and how that meaning shifted across merchant types, transaction volumes, and use cases.</p>
+
+            <div class="pp-timeline">
+              <div class="pp-timeline-item">
+                <div class="pp-timeline-dot"></div>
+                <div class="pp-timeline-date">2020 — Discovery</div>
+                <div class="pp-timeline-title">Merchant Research: What Does "Customer" Actually Mean?</div>
+                <div class="pp-timeline-desc">Conducted interviews with 40+ merchants across SMB, mid-market, and enterprise tiers. A freelancer on PayPal Checkout just needs a name and email. A subscription SaaS on Braintree needs a vault token, billing history, and failed payment reason codes. A marketplace on Hyperwallet needs compliance verification and payout method. I mapped these needs into a tiered field taxonomy to inform what the UI should show by default vs. progressively disclose.</div>
+              </div>
+              <div class="pp-timeline-item">
+                <div class="pp-timeline-dot"></div>
+                <div class="pp-timeline-date">2020–2021 — Information Architecture</div>
+                <div class="pp-timeline-title">Unifying Three Customer Data Models</div>
+                <div class="pp-timeline-desc">Worked directly with platform architects from Braintree and Hyperwallet to map field equivalencies and conflicts. Designed a canonical customer schema that could represent all three systems' data without data loss — then translated that into a layered UI where core fields were always visible, while system-specific fields appeared contextually based on merchant configuration.</div>
+              </div>
+              <div class="pp-timeline-item">
+                <div class="pp-timeline-dot"></div>
+                <div class="pp-timeline-date">2021 — Design System Integration</div>
+                <div class="pp-timeline-title">Building on PayPal's Design System</div>
+                <div class="pp-timeline-desc">All Customers feature components were designed with PayPal's core design system — reusing established table patterns, card structures, form field components, and the navigation shell. I contributed two new patterns back to the design system: the source-attribution badge (indicating whether a record originated from PayPal, Braintree, or Hyperwallet) and the vault status indicator.</div>
+              </div>
+              <div class="pp-timeline-item">
+                <div class="pp-timeline-dot"></div>
+                <div class="pp-timeline-date">2021–2022 — Vault Feature</div>
+                <div class="pp-timeline-title">Connecting Customer Profiles to Repeat Commerce</div>
+                <div class="pp-timeline-desc">The vault existed in Braintree but wasn't surfaced in the PayPal merchant dashboard at all. I designed the end-to-end vault workflow: how merchants saw which customers had stored payment methods, how they could initiate repeat charges, and how buyers were informed when their wallet was remembered. This became the core growth driver for the Customers feature.</div>
+              </div>
+              <div class="pp-timeline-item">
+                <div class="pp-timeline-dot"></div>
+                <div class="pp-timeline-date">2022–2023 — Scale & Enterprise</div>
+                <div class="pp-timeline-title">Bulk Operations & API Alignment</div>
+                <div class="pp-timeline-desc">As enterprise merchants onboarded, new needs emerged: bulk customer import, CSV export, advanced filtering by vault status and payment method type, and CRM-like segmentation. I designed progressive complexity that didn't overwhelm new users but gave enterprise power users full control.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 05 UI Design: Customer List ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>05 </span>UI Design</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">The customer list view was designed as a scannable, actionable hub. Vault status is surfaced inline so merchants could immediately identify their highest-value repeat buyers. Delivery address is a first-class column alongside email and last transaction date.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+        <!-- Customer List Mockup -->
+        <div class="pp-mockup-wrap">
+          <div class="browser-chrome">
+            <div class="browser-dot red"></div>
+            <div class="browser-dot yellow"></div>
+            <div class="browser-dot green"></div>
+            <div class="browser-url">paypal.com/unifiedtransactions/customers</div>
+          </div>
+          <div class="browser-body">
+            <div class="pp-topnav">
+              <div class="pp-topnav-logo" style="font-size:15px; font-weight:800; color:#0070BA;">&#9632; PayPal</div>
+              <div class="pp-topnav-items">
+                <div class="pp-nav-item">Home</div>
+                <div class="pp-nav-item">Activity</div>
+                <div class="pp-nav-item active">Sales</div>
+                <div class="pp-nav-item">Finance</div>
+                <div class="pp-nav-item">Operations</div>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px;">
+                <div class="pp-avatar">DD</div>
+              </div>
+            </div>
+            <div class="pp-layout">
+              <div class="pp-main">
+                <div class="pp-page-header">
+                  <div>
+                    <div class="pp-page-title">Customers</div>
+                    <div class="pp-page-sub">Customers with transactions from Jan 31, 2020 to Jun 12, 2023</div>
+                  </div>
+                  <div style="display:flex; gap:8px;">
+                    <div class="pp-btn pp-btn-secondary">Export CSV</div>
+                    <div class="pp-btn pp-btn-primary">+ Add Customer</div>
+                  </div>
+                </div>
+                <div class="pp-toolbar">
+                  <div class="pp-search">🔍&nbsp; Search by name, email, or customer ID…</div>
+                  <div class="pp-filter-chip">Vault Status ▾</div>
+                  <div class="pp-filter-chip">Delivery Address ▾</div>
+                  <div class="pp-filter-chip">Date Added ▾</div>
+                </div>
+                <table class="pp-table">
+                  <thead>
+                    <tr>
+                      <th>Customer Name</th>
+                      <th>Delivery Address</th>
+                      <th>Email Address</th>
+                      <th>Last Transaction</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="customer-name">Sarah Okonkwo</div></td>
+                      <td style="font-size:13px; color:#1A1F36;">240 Market St Ste 800, San Francisco, CA 94105</td>
+                      <td style="font-size:13px; color:#545D6B;">s.okonkwo@acmecorp.com</td>
+                      <td style="font-size:13px;">$2,400.00 USD on 6/9/23</td>
+                    </tr>
+                    <tr>
+                      <td><div class="customer-name">Marcus Delacroix</div></td>
+                      <td style="font-size:13px; color:#8A929E; font-style:italic;">Not Provided</td>
+                      <td style="font-size:13px; color:#545D6B;">marcus@delacroix.io</td>
+                      <td style="font-size:13px;">$480.00 USD on 6/7/23</td>
+                    </tr>
+                    <tr>
+                      <td><div class="customer-name">Priya Ramanathan</div></td>
+                      <td style="font-size:13px; color:#1A1F36;">55 9th St Apt 511, San Francisco, CA 94103</td>
+                      <td style="font-size:13px; color:#545D6B;">pramanathan@techflow.com</td>
+                      <td style="font-size:13px;">$28.56 USD on 5/18/24</td>
+                    </tr>
+                    <tr>
+                      <td><div class="customer-name">Jordan Wu</div></td>
+                      <td style="font-size:13px; color:#1A1F36;">180 Sansome St, San Francisco, CA 94104</td>
+                      <td style="font-size:13px; color:#545D6B;">jordan.wu@studio.co</td>
+                      <td style="font-size:13px;">$1,160.00 USD on 6/10/23</td>
+                    </tr>
+                    <tr>
+                      <td><div class="customer-name">Elena Vasquez</div></td>
+                      <td style="font-size:13px; color:#1A1F36;">1 Market St, San Francisco, CA 94105</td>
+                      <td style="font-size:13px; color:#545D6B;">evasquez@globalretail.net</td>
+                      <td style="font-size:13px;">$22,500.00 USD on 6/11/23</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="background:#F7F9FC; padding:14px; display:flex; justify-content:center; gap:12px; border-top:1px solid #E3E8EF;">
+                  <div style="border:1px solid #E3E8EF; border-radius:100px; padding:7px 20px; font-size:13px; font-weight:500; color:#1A1F36; background:white;">See More</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Customer Detail Mockup ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>06 </span>Customer Detail</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">The customer detail view was designed around progressive disclosure. Every merchant sees the same core profile. But the right column adapts based on source: Braintree merchants see vault tokens and risk data; Hyperwallet platforms see compliance status and payout methods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-11">
+        <div class="pp-mockup-wrap">
+          <div class="browser-chrome">
+            <div class="browser-dot red"></div>
+            <div class="browser-dot yellow"></div>
+            <div class="browser-dot green"></div>
+            <div class="browser-url">business.paypal.com/commerce/customers/cust_4f8a2b19e</div>
+          </div>
+          <div class="browser-body">
+            <div class="pp-topnav">
+              <div class="pp-topnav-logo" style="font-size:15px; font-weight:800; color:#0070BA;">&#9632; PayPal</div>
+              <div class="pp-topnav-items">
+                <div class="pp-nav-item">Home</div>
+                <div class="pp-nav-item">Activity</div>
+                <div class="pp-nav-item active">Sales</div>
+                <div class="pp-nav-item">Finance</div>
+              </div>
+              <div class="pp-avatar">DD</div>
+            </div>
+            <div style="background:#F7F9FC; padding:12px 24px; border-bottom:1px solid #E3E8EF; font-size:13px; color:#545D6B;">
+              <span style="color:#009CDE; cursor:pointer;">← All Customers</span> / <span style="color:#1A1F36; font-weight:500;">Sarah Okonkwo</span>
+            </div>
+            <div style="padding:20px 24px; background:#F7F9FC;">
+              <!-- Profile header -->
+              <div style="background:white; border:1px solid #E3E8EF; border-radius:10px; margin-bottom:16px; overflow:hidden; box-shadow:0 1px 4px rgba(1,33,105,.06);">
+                <div class="customer-profile-header">
+                  <div class="customer-avatar-lg">SO</div>
+                  <div>
+                    <div class="customer-profile-name">Sarah Okonkwo</div>
+                    <div class="customer-profile-meta">s.okonkwo@acmecorp.com · Customer since Jan 14, 2021</div>
+                  </div>
+                  <div class="customer-profile-source">
+                    <span class="source-tag source-braintree">Braintree</span>
+                    <span style="font-size:11px; color:rgba(255,255,255,.6);">cust_4f8a2b19e</span>
+                  </div>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); padding:16px 20px; gap:0;">
+                  <div style="text-align:center; border-right:1px solid #E3E8EF; padding:0 8px;"><div style="font-size:20px; font-weight:800; color:#0070BA;">$14,820</div><div style="font-size:11px; color:#545D6B;">Total Spend</div></div>
+                  <div style="text-align:center; border-right:1px solid #E3E8EF; padding:0 8px;"><div style="font-size:20px; font-weight:800; color:#0070BA;">38</div><div style="font-size:11px; color:#545D6B;">Transactions</div></div>
+                  <div style="text-align:center; border-right:1px solid #E3E8EF; padding:0 8px;"><div style="font-size:20px; font-weight:800; color:#00956A;">3</div><div style="font-size:11px; color:#545D6B;">Vaulted Methods</div></div>
+                  <div style="text-align:center; padding:0 8px;"><div style="font-size:20px; font-weight:800; color:#0070BA;">$390</div><div style="font-size:11px; color:#545D6B;">Avg. Order Value</div></div>
+                </div>
+              </div>
+              <!-- Detail grid -->
+              <div class="detail-grid">
+                <div>
+                  <div class="pp-card">
+                    <div class="pp-card-header"><div class="pp-card-title">Customer Profile</div><div class="pp-card-action">Edit</div></div>
+                    <div class="pp-card-body">
+                      <div class="field-row"><span class="field-label">Full name</span><span class="field-value">Sarah A. Okonkwo</span></div>
+                      <div class="field-row"><span class="field-label">Email</span><span class="field-value">s.okonkwo@acmecorp.com</span></div>
+                      <div class="field-row"><span class="field-label">Phone</span><span class="field-value">+1 (415) 555-0192</span></div>
+                      <div class="field-row"><span class="field-label">Company</span><span class="field-value">Acme Corp. <span class="source-tag source-braintree">BT</span></span></div>
+                      <div class="field-row"><span class="field-label">Customer ID</span><span class="field-value" style="font-family:monospace; font-size:11px;">cust_4f8a2b19e</span></div>
+                      <div class="field-row"><span class="field-label">Risk assessment <span class="source-tag source-braintree">BT</span></span><span class="field-value" style="color:#00956A; font-weight:600;">Low Risk</span></div>
+                    </div>
+                  </div>
+                  <div class="pp-card">
+                    <div class="pp-card-header"><div class="pp-card-title">Recent Transactions</div><div class="pp-card-action">View all 38</div></div>
+                    <div class="pp-card-body" style="padding:12px 18px;">
+                      <div class="txn-row"><div class="txn-dot"></div><div class="txn-info"><div class="txn-name">Annual License Renewal</div><div class="txn-date">Jun 9, 2023 · Visa ••4521 (vaulted)</div></div><div class="txn-amount">$2,400.00</div></div>
+                      <div class="txn-row"><div class="txn-dot"></div><div class="txn-info"><div class="txn-name">Add-on: Analytics Module</div><div class="txn-date">Apr 15, 2023 · Visa ••4521 (vaulted)</div></div><div class="txn-amount">$480.00</div></div>
+                      <div class="txn-row"><div class="txn-dot refund"></div><div class="txn-info"><div class="txn-name">Partial Refund — Seat Reduction</div><div class="txn-date">Feb 8, 2023</div></div><div class="txn-amount negative">-$320.00</div></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pp-card">
+                    <div class="pp-card-header"><div class="pp-card-title">🔒 Vaulted Payment Methods</div><div class="pp-card-action">Add method</div></div>
+                    <div class="pp-card-body" style="padding:12px 18px;">
+                      <div class="pm-item"><div class="pm-icon pm-visa">VISA</div><div class="pm-info"><div class="pm-name">Visa ••••4521</div><div class="pm-detail">Expires 09/26 · Default</div></div><div class="pm-vault-badge">✓ Vaulted</div></div>
+                      <div class="pm-item"><div class="pm-icon pm-mc" style="font-size:8px;">MC</div><div class="pm-info"><div class="pm-name">Mastercard ••••8830</div><div class="pm-detail">Expires 03/25</div></div><div class="pm-vault-badge">✓ Vaulted</div></div>
+                      <div class="pm-item"><div class="pm-icon pm-ach">ACH</div><div class="pm-info"><div class="pm-name">Bank Account ••6280</div><div class="pm-detail">Chase Checking · Verified</div></div><div class="pm-vault-badge">✓ Vaulted</div></div>
+                    </div>
+                    <div style="padding:12px 18px; background:#E6F9F4; border-top:1px solid #B6EEE0; border-radius:0 0 10px 10px;">
+                      <div style="font-size:12px; font-weight:700; color:#00956A; margin-bottom:4px;">PayPal Remembered Wallet Active</div>
+                      <div style="font-size:11px; color:#00744F; line-height:1.5;">Recurring charges can be processed without re-authentication.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 07 Field Taxonomy ── -->
+    <section class="intro-section section-padding sub-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>07 </span>Field Taxonomy</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">One of the most consequential design decisions was determining which fields to show, when, and for whom. I developed a four-tier field classification that became the foundation for both the UI and the API design.</p>
+
+            <div class="pp-quote mt-30">
+              <p>"The customer form isn't just a form — it's a statement about who the product thinks the merchant is. If we show 'risk data nonce' to a bakery owner, we've already failed."</p>
+            </div>
+
+            <div class="mt-40">
+              <div class="taxonomy-group">
+                <div class="taxonomy-group-name">Core Fields — Always visible, all merchant tiers</div>
+                <div class="taxonomy-fields">
+                  <span class="taxonomy-field tf-required"><span class="tf-dot"></span>First name</span>
+                  <span class="taxonomy-field tf-required"><span class="tf-dot"></span>Last name</span>
+                  <span class="taxonomy-field tf-required"><span class="tf-dot"></span>Email address</span>
+                  <span class="taxonomy-field tf-required"><span class="tf-dot"></span>Customer ID</span>
+                  <span class="taxonomy-field tf-optional"><span class="tf-dot"></span>Phone</span>
+                  <span class="taxonomy-field tf-optional"><span class="tf-dot"></span>Company name</span>
+                  <span class="taxonomy-field tf-optional"><span class="tf-dot"></span>Billing address</span>
+                  <span class="taxonomy-field tf-optional"><span class="tf-dot"></span>Date created</span>
+                </div>
+              </div>
+              <div class="taxonomy-group mt-20">
+                <div class="taxonomy-group-name">Vault Fields — Merchants using Braintree or PayPal recurring</div>
+                <div class="taxonomy-fields">
+                  <span class="taxonomy-field tf-vault"><span class="tf-dot"></span>Vaulted payment methods</span>
+                  <span class="taxonomy-field tf-vault"><span class="tf-dot"></span>Default payment method</span>
+                  <span class="taxonomy-field tf-vault"><span class="tf-dot"></span>Vault token</span>
+                  <span class="taxonomy-field tf-vault"><span class="tf-dot"></span>Wallet remembered status</span>
+                  <span class="taxonomy-field tf-vault"><span class="tf-dot"></span>Recurring billing eligible</span>
+                </div>
+              </div>
+              <div class="taxonomy-group mt-20">
+                <div class="taxonomy-group-name">Braintree-Origin Fields — Developer/enterprise merchants</div>
+                <div class="taxonomy-fields">
+                  <span class="taxonomy-field tf-braintree"><span class="tf-dot"></span>Custom fields (key/value)</span>
+                  <span class="taxonomy-field tf-braintree"><span class="tf-dot"></span>Risk assessment score</span>
+                  <span class="taxonomy-field tf-braintree"><span class="tf-dot"></span>Transaction dispute history</span>
+                  <span class="taxonomy-field tf-braintree"><span class="tf-dot"></span>3DS authentication data</span>
+                </div>
+              </div>
+              <div class="taxonomy-group mt-20">
+                <div class="taxonomy-group-name">Hyperwallet-Origin Fields — Marketplace / payout platforms</div>
+                <div class="taxonomy-fields">
+                  <span class="taxonomy-field tf-hyperwallet"><span class="tf-dot"></span>Payout method</span>
+                  <span class="taxonomy-field tf-hyperwallet"><span class="tf-dot"></span>Compliance verification status</span>
+                  <span class="taxonomy-field tf-hyperwallet"><span class="tf-dot"></span>Tax profile (W-9/W-8)</span>
+                  <span class="taxonomy-field tf-hyperwallet"><span class="tf-dot"></span>Identity verification</span>
+                  <span class="taxonomy-field tf-hyperwallet"><span class="tf-dot"></span>Bank account (payout destination)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 08 Vault Feature ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>08 </span>The Vault</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">The vault was Braintree's crown jewel, but it was invisible to most merchants. Buried in API documentation, it was only used by developers who knew to look for it. My central design thesis: if we surface vault status prominently in the customer dashboard, merchants would understand its value and actively use it to drive repeat revenue.</p>
+
+            <div class="vault-diagram-dark">
+              <div style="text-align:center; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.35); margin-bottom:28px;">Vault Flow: First Purchase → Remembered Wallet → Repeat Commerce</div>
+              <div class="vault-flow">
+                <div class="vault-node">
+                  <div class="vault-node-icon" style="background:rgba(99,102,241,0.15);">👤</div>
+                  <div class="vault-node-label">Customer Checkout</div>
+                  <div class="vault-node-sub">First purchase at<br>merchant's site</div>
+                </div>
+                <div class="vault-arrow">→</div>
+                <div class="vault-node">
+                  <div class="vault-node-icon" style="background:rgba(18,194,233,0.12);">💳</div>
+                  <div class="vault-node-label">PayPal Login + Consent</div>
+                  <div class="vault-node-sub">Buyer opts in to<br>"Remember my wallet"</div>
+                </div>
+                <div class="vault-arrow">→</div>
+                <div class="vault-node">
+                  <div class="vault-node-icon" style="background:rgba(0,207,146,0.12);">🔒</div>
+                  <div class="vault-node-label">Token Created</div>
+                  <div class="vault-node-sub">Payment method<br>securely tokenized</div>
+                </div>
+                <div class="vault-arrow">→</div>
+                <div class="vault-node">
+                  <div class="vault-node-icon" style="background:rgba(255,183,0,0.12);">📊</div>
+                  <div class="vault-node-label">Merchant Dashboard</div>
+                  <div class="vault-node-sub">Customer shown with<br>"Vaulted" badge</div>
+                </div>
+                <div class="vault-arrow">→</div>
+                <div class="vault-node">
+                  <div class="vault-node-icon" style="background:rgba(196,113,237,0.12);">⚡</div>
+                  <div class="vault-node-label">Repeat Purchase</div>
+                  <div class="vault-node-sub">One-click checkout,<br>zero re-entry</div>
+                </div>
+              </div>
+              <div style="margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06); display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center;">
+                <div><div style="font-size:24px; font-weight:800; color:#12c2e9; margin-bottom:4px;">42%</div><div style="font-size:12px; color:rgba(255,255,255,0.4);">Reduction in checkout<br>abandonment</div></div>
+                <div><div style="font-size:24px; font-weight:800; color:#00CF92; margin-bottom:4px;">3.2×</div><div style="font-size:12px; color:rgba(255,255,255,0.4);">Higher LTV for vaulted<br>vs. non-vaulted customers</div></div>
+                <div><div style="font-size:24px; font-weight:800; color:#FFB700; margin-bottom:4px;">+28%</div><div style="font-size:12px; color:rgba(255,255,255,0.4);">Checkout conversion<br>improvement</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 09 Merchant Tiers ── -->
+    <section class="intro-section section-padding sub-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>09 </span>One Product, Every Tier</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">The Customers feature had to work for a Shopify-adjacent SMB processing $2K/month and a Fortune 500 enterprise processing $2B/year — without building two products. The strategy: a single adaptive interface where complexity emerges only when needed.</p>
+            <div class="row mt-30">
+              <div class="col-md-4 mb-20">
+                <div class="pp-tier-card" style="border-top:3px solid #12c2e9;">
+                  <div class="tier-label" style="color:#12c2e9;">SMB Merchants</div>
+                  <h5>Simple. Fast. Clear.</h5>
+                  <p>A lightweight CRM — find who bought what, send a follow-up invoice, see whether a card is still valid. Vault status is a clear benefit badge.</p>
+                  <ul>
+                    <li>· Minimal fields shown by default</li>
+                    <li>· Vault explained in plain language</li>
+                    <li>· No API terminology in the UI</li>
+                    <li>· One-click actions (charge, email, refund)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4 mb-20">
+                <div class="pp-tier-card" style="border-top:3px solid #c471ed;">
+                  <div class="tier-label" style="color:#c471ed;">Mid-Market</div>
+                  <h5>Segments. History. Insight.</h5>
+                  <p>Segment customers by vault status, filter by spend band, understand churn signals. Capabilities unlock naturally as customer count grows.</p>
+                  <ul>
+                    <li>· Advanced filters (vault, source, spend)</li>
+                    <li>· Bulk operations (charge, export)</li>
+                    <li>· Customer segments</li>
+                    <li>· Transaction trend indicators</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4 mb-20">
+                <div class="pp-tier-card" style="border-top:3px solid rgba(255,255,255,0.2);">
+                  <div class="tier-label" style="color:rgba(255,255,255,0.5);">Enterprise</div>
+                  <h5>API-parity. Control. Compliance.</h5>
+                  <p>Every field accessible in the API is visible in the dashboard. Compliance data, audit trails, and custom field support — without breaking the experience for other tiers.</p>
+                  <ul>
+                    <li>· Custom fields (Braintree key/value)</li>
+                    <li>· Compliance & risk data visible</li>
+                    <li>· Hyperwallet payout fields surfaced</li>
+                    <li>· Audit log & data export (GDPR-ready)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 10 Reflection ── -->
+    <section class="intro-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+            <div class="htit"><h4><span>10 </span>Reflection</h4></div>
+          </div>
+          <div class="col-lg-8 offset-lg-1 col-md-8">
+            <p class="extra-text">Working on Customers at PayPal was a lesson in the difference between a feature and a foundation. The customer profile isn't useful in isolation — it's the connective tissue that makes every other payment product smarter. A transaction gains meaning when you know who made it. A vault token becomes a relationship when it's tied to a name, a history, a context.</p>
+            <p class="mt-20" style="color:rgba(255,255,255,0.55); font-size:15px; line-height:1.9;">The design challenge of integrating Braintree and Hyperwallet wasn't primarily technical — it was conceptual. I had to develop a vocabulary that worked across three very different customer models and make it feel natural to merchants who didn't know or care about the underlying acquisitions.</p>
+
+            <div class="pp-quote mt-40">
+              <p>"The vault wasn't a new technology — it had existed in Braintree for years. The design insight was that surfacing it as a first-class concept in the merchant dashboard transformed it from a developer tool into a growth lever every merchant could understand and act on."</p>
+              <div class="attr">— Dannielle Dan, Senior Product Designer, PayPal Commerce Platform</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="sub-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="item md-mb50">
+              <div class="title"><h5>Contact</h5></div>
+              <ul>
+                <li>
+                  <span class="icon pe-7s-mail"></span>
+                  <div class="cont"><h6>Email</h6><p>dannielledandesign@gmail.com</p></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="item">
+              <div class="logo"><img src="img/Dannielle-Dan.svg" alt=""></div>
+              <div class="social">
+                <a href="https://www.linkedin.com/in/dannielledan/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/dannielleydan"><i class="fab fa-twitter"></i></a>
+              </div>
+              <div class="copy-right">
+                <p>© 2026, Dannielle Dan</p>
+                <p style="font-size:8px;">You are a soul having a physical experience for a little while ♥ ♥</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- end wrapper -->
+
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/jquery-migrate-3.0.0.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#012169"/>
+      <stop offset="50%" style="stop-color:#003087"/>
+      <stop offset="100%" style="stop-color:#0059B3"/>
+    </linearGradient>
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.07)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.02)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="540" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="180" x2="800" y2="180" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="360" x2="800" y2="360" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="540" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="540" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="540" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Dashboard card mockup -->
+  <rect x="80" y="100" width="640" height="340" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Top nav bar -->
+  <rect x="80" y="100" width="640" height="44" rx="10" fill="rgba(255,255,255,0.08)"/>
+  <rect x="80" y="125" width="640" height="19" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Nav logo dot -->
+  <circle cx="108" cy="122" r="7" fill="#009CDE" opacity="0.8"/>
+  <!-- Nav items (fake text bars) -->
+  <rect x="125" y="117" width="36" height="8" rx="3" fill="rgba(255,255,255,0.2)"/>
+  <rect x="170" y="117" width="44" height="8" rx="3" fill="rgba(255,255,255,0.12)"/>
+  <rect x="225" y="117" width="28" height="8" rx="3" fill="rgba(255,255,255,0.35)"/>
+  <rect x="264" y="117" width="52" height="8" rx="3" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Page title area -->
+  <rect x="108" y="165" width="120" height="14" rx="3" fill="rgba(255,255,255,0.6)"/>
+  <rect x="108" y="186" width="200" height="8" rx="3" fill="rgba(255,255,255,0.2)"/>
+
+  <!-- Table header -->
+  <rect x="108" y="212" width="592" height="32" rx="4" fill="rgba(255,255,255,0.05)"/>
+  <rect x="120" y="221" width="60" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="280" y="221" width="80" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="460" y="221" width="70" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="620" y="221" width="60" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- Table rows -->
+  <!-- Row 1 -->
+  <rect x="108" y="255" width="592" height="34" rx="0" fill="rgba(255,255,255,0.03)"/>
+  <rect x="120" y="265" width="70" height="8" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="280" y="265" width="100" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="460" y="265" width="80" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="630" cy="269" r="5" fill="#00CF92" opacity="0.8"/>
+  <rect x="640" y="265" width="40" height="8" rx="2" fill="rgba(0,207,146,0.5)"/>
+
+  <!-- Row 2 -->
+  <rect x="108" y="297" width="592" height="34" rx="0" fill="rgba(0,0,0,0.04)"/>
+  <rect x="120" y="307" width="85" height="8" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="280" y="307" width="90" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="460" y="307" width="60" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="630" cy="311" r="5" fill="#00CF92" opacity="0.8"/>
+  <rect x="640" y="307" width="40" height="8" rx="2" fill="rgba(0,207,146,0.5)"/>
+
+  <!-- Row 3 -->
+  <rect x="108" y="339" width="592" height="34" rx="0" fill="rgba(255,255,255,0.03)"/>
+  <rect x="120" y="349" width="62" height="8" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="280" y="349" width="110" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="460" y="349" width="75" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="630" cy="353" r="5" fill="#FFB700" opacity="0.7"/>
+  <rect x="640" y="349" width="35" height="8" rx="2" fill="rgba(255,183,0,0.4)"/>
+
+  <!-- Row 4 -->
+  <rect x="108" y="381" width="592" height="34" rx="0" fill="rgba(0,0,0,0.04)"/>
+  <rect x="120" y="391" width="78" height="8" rx="2" fill="rgba(255,255,255,0.55)"/>
+  <rect x="280" y="391" width="95" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <rect x="460" y="391" width="65" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="630" cy="395" r="5" fill="#00CF92" opacity="0.8"/>
+  <rect x="640" y="395" width="40" height="8" rx="2" fill="rgba(0,207,146,0.5)"/>
+
+  <!-- PayPal wordmark area (bottom left corner) -->
+  <rect x="80" y="468" width="200" height="1" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Stat pills floating -->
+  <rect x="516" y="156" width="84" height="36" rx="18" fill="rgba(0,207,146,0.12)" stroke="rgba(0,207,146,0.25)" stroke-width="1"/>
+  <text x="558" y="168" font-family="'Helvetica Neue',sans-serif" font-size="8" font-weight="700" fill="rgba(0,207,146,0.9)" text-anchor="middle">+31%</text>
+  <text x="558" y="180" font-family="'Helvetica Neue',sans-serif" font-size="7" fill="rgba(255,255,255,0.45)" text-anchor="middle">Revenue</text>
+
+  <rect x="612" y="156" width="72" height="36" rx="18" fill="rgba(18,194,233,0.1)" stroke="rgba(18,194,233,0.25)" stroke-width="1"/>
+  <text x="648" y="168" font-family="'Helvetica Neue',sans-serif" font-size="8" font-weight="700" fill="rgba(18,194,233,0.9)" text-anchor="middle">~$47B</text>
+  <text x="648" y="180" font-family="'Helvetica Neue',sans-serif" font-size="7" fill="rgba(255,255,255,0.45)" text-anchor="middle">GMV</text>
+
+  <!-- Label at bottom -->
+  <text x="80" y="490" font-family="'Helvetica Neue',sans-serif" font-size="11" font-weight="300" letter-spacing="4" fill="rgba(255,255,255,0.35)" text-transform="uppercase">PAYPAL</text>
+  <text x="80" y="510" font-family="'Helvetica Neue',sans-serif" font-size="9" letter-spacing="3" fill="rgba(255,255,255,0.2)">CUSTOMERS · 2020–2023</text>
+</svg>
