@@ -301,7 +301,10 @@
 
           <div class="col-lg-4 col-md-6 items">
             <div class="item-img protected-work wow fadeInUp" data-wow-delay=".1s">
-              <img src="img/agent1.gif" alt="Confidential AI Agent Project">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/agent1.png">
+                <img src="img/agent1.gif" alt="Confidential AI Agent Project">
+              </picture>
               <span class="nda-badge">🔒 Under NDA</span>
               <div class="protected-overlay">
                 <span class="lock-icon">🔒</span>
@@ -319,7 +322,7 @@
           <div class="col-lg-4 col-md-6 items">
             <div class="item-img protected-work wow fadeInUp" data-wow-delay=".2s">
               <img src="img/agent2.png" alt="Orby AI — AI Agent Design">
-              <img class="img-hover" src="img/agent2.gif" alt="Orby AI animated">
+              <img class="img-hover" data-src="img/agent2.gif" alt="Orby AI animated">
               <span class="nda-badge">🔒 Under NDA</span>
               <div class="protected-overlay">
                 <span class="lock-icon">🔒</span>
@@ -388,7 +391,10 @@
 
             <div class="item-img wow fadeInUp mt-30" data-wow-delay=".9s">
               <a href="project-details-mix.html">
-                <img src="img/MSFT-Office-Mix/OfficeMix_background-transition.gif" alt="Office Mix">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="img/MSFT-Office-Mix/OfficeMix-02.png">
+                  <img src="img/MSFT-Office-Mix/OfficeMix_background-transition.gif" alt="Office Mix" loading="lazy">
+                </picture>
               </a>
             </div>
             <div class="cont">
@@ -565,7 +571,10 @@
 
           <div class="col-lg-4 col-md-6 items">
             <div class="item-img wow fadeInUp" data-wow-delay=".3s">
-              <img src="img/art/a-car-animated.gif" alt="Car Animation — Dannielle Dan">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/art/a-car.png">
+                <img src="img/art/a-car-animated.gif" alt="Car Animation — Dannielle Dan" loading="lazy">
+              </picture>
             </div>
             <div class="cont">
               <h6>Car Animation</h6>
@@ -632,5 +641,18 @@
   <script src="js/jquery-migrate-3.0.0.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/scripts.js"></script>
+  <script>
+    // Only load hover GIFs on non-touch desktop — prevents 10MB+ of GIF data
+    // from being decoded in memory on iOS Safari (which causes "A problem
+    // repeatedly occurred" crash when scrolling fast).
+    (function () {
+      var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+      if (!isTouch) {
+        document.querySelectorAll('.img-hover[data-src]').forEach(function (img) {
+          img.src = img.getAttribute('data-src');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

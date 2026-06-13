@@ -284,3 +284,13 @@
   opacity: .4;
   margin: 0;
 }
+
+/* ── Mobile performance: prevent large GIFs from crashing iOS Safari ── */
+@media (max-width: 767px) {
+  /* Disable parallax fixed attachment — removes extra GPU compositing layer */
+  .parallaxie { background-attachment: scroll !important; }
+  /* Belt-and-suspenders: hide hover GIFs (src is also stripped via JS) */
+  .img-hover { display: none !important; }
+  /* Reduce WOW animation complexity on mobile */
+  .wow { animation-duration: 0.4s !important; }
+}
