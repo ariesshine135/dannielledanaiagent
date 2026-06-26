@@ -76514,7 +76514,7 @@ A.oT.prototype={
 H(){return"_Step."+this.b}}
 A.AQ.prototype={}
 A.HZ.prototype={
-N(a){return new A.wu(B.Ay,"Pre-Order \u2014 Design, Lead, Create",A.re(null,B.AF,"sans-serif",B.ir,null),!1,null)}}
+N(a){return new A.wu(B.Ay,"Pre-Order \u2014 Founding Designer for AI Startups",A.re(null,B.AF,"sans-serif",B.ir,null),!1,null)}}
 A.um.prototype={
 an(){var s=A.d([],t.he)
 return new A.zO(s,new A.K2(B.y6,$.ak()),A.J1(),A.Yi(!0,null,!0,!0,null,null,!1),B.Ta)}}
@@ -76546,7 +76546,7 @@ break
 default:break}},
 qf(){var s=0,r=A.Q(t.H),q=this,p
 var $async$qf=A.R(function(a,b){if(a===1)return A.N(b,r)
-for(;;)switch(s){case 0:p=A.jS("https://buy.stripe.com/test_9B66oH4PR7PIceTcoo5AQ00?prefilled_email="+A.CJ(2,q.y,B.a3,!1),0,null)
+for(;;)switch(s){case 0:p=A.jS("https://buy.stripe.com/aFa3cn37941GadOb8T2Ry00?prefilled_email="+A.CJ(2,q.y,B.a3,!1),0,null)
 s=4
 return A.S(A.ami(p),$async$qf)
 case 4:s=b?2:3
@@ -76573,7 +76573,7 @@ A.abn.prototype={
 $0(){return this.a.kT("Hi there! \ud83d\udc4b")},
 $S:0}
 A.abo.prototype={
-$0(){return this.a.kT("I'm here to help you pre-order Design, Lead, Create.")},
+$0(){return this.a.kT("I'm here to help you pre-order Founding Designer for AI Startups.")},
 $S:0}
 A.abp.prototype={
 $0(){var s=this.a
@@ -76652,7 +76652,7 @@ return new A.Ls(s.d[b],null)},
 $S:471}
 A.Ng.prototype={
 N(a){var s=null,r=A.ah(15,B.h.B()>>>16&255,B.h.B()>>>8&255,B.h.B()&255),q=A.aqk(B.D7,new A.ad3()),p=A.ah(31,B.bC.B()>>>16&255,B.bC.B()>>>8&255,B.bC.B()&255),o=A.mk(20)
-return A.hc(A.a5g(A.d([q,B.LP,B.Qr,B.M1,A.hc(B.Qp,B.B,new A.cN(p,s,A.ak9(A.ah(B.c.aG(76.5),B.bC.B()>>>16&255,B.bC.B()>>>8&255,B.bC.B()&255)),o,s,s,B.aD),s,s,B.Cs,s)],t.E),B.bl,B.bJ),B.B,new A.cN(B.B8,s,new A.cZ(B.o,B.o,new A.aU(r,1,B.q,-1),B.o),s,s,s,B.aD),s,s,B.Cz,s)}}
+return A.hc(A.a5g(A.d([q,B.LP,B.Qq,B.M1,A.hc(B.Qo,B.B,new A.cN(p,s,A.ak9(A.ah(B.c.aG(76.5),B.bC.B()>>>16&255,B.bC.B()>>>8&255,B.bC.B()&255)),o,s,s,B.aD),s,s,B.Cs,s)],t.E),B.bl,B.bJ),B.B,new A.cN(B.B8,s,new A.cZ(B.o,B.o,new A.aU(r,1,B.q,-1),B.o),s,s,s,B.aD),s,s,B.Cz,s)}}
 A.ad3.prototype={
 $1(a){return B.co.PL(a)},
 $S:185}
@@ -76670,7 +76670,7 @@ N(a){var s=null
 return A.hc(B.D5,B.B,new A.cN(s,s,s,s,s,B.co,B.eR),28,s,s,28)}}
 A.Lk.prototype={
 N(a){var s=null,r=A.ah(10,B.h.B()>>>16&255,B.h.B()>>>8&255,B.h.B()&255),q=A.mk(10),p=A.ak9(A.ah(20,B.h.B()>>>16&255,B.h.B()>>>8&255,B.h.B()&255)),o=t.E
-return new A.eb(B.Cr,A.ET(A.d([A.hc(A.a5g(A.d([A.hc(B.Ax,B.B,new A.cN(s,s,s,A.mk(4),s,B.co,B.aD),60,s,s,44),B.LQ,A.XR(A.ET(A.d([B.Qo,B.LU,A.hE("Digital edition \xb7 PDF/ePub",s,s,s,A.fx(s,s,A.ah(102,B.h.B()>>>16&255,B.h.B()>>>8&255,B.h.B()&255),s,s,s,s,s,s,s,s,11,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),B.xO,A.aqk(B.Qq,new A.aaw())],o),B.bk,B.ed),1)],o),B.bl,B.bJ),B.B,new A.cN(r,s,p,q,s,s,B.aD),s,B.mb,B.Cw,s),B.LT,new A.eb(B.mb,new A.Nf("Pay $8.88  \u2192",this.c,s),s)],o),B.bk,B.ed),s)}}
+return new A.eb(B.Cr,A.ET(A.d([A.hc(A.a5g(A.d([A.hc(B.Ax,B.B,new A.cN(s,s,s,A.mk(4),s,B.co,B.aD),60,s,s,44),B.LQ,A.XR(A.ET(A.d([B.Qp,B.LU,A.hE("Digital edition \xb7 PDF/ePub",s,s,s,A.fx(s,s,A.ah(102,B.h.B()>>>16&255,B.h.B()>>>8&255,B.h.B()&255),s,s,s,s,s,s,s,s,11,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),B.xO,A.aqk(B.Qr,new A.aaw())],o),B.bk,B.ed),1)],o),B.bl,B.bJ),B.B,new A.cN(r,s,p,q,s,s,B.aD),s,B.mb,B.Cw,s),B.LT,new A.eb(B.mb,new A.Nf("Pay $8.88  \u2192",this.c,s),s)],o),B.bk,B.ed),s)}}
 A.aaw.prototype={
 $1(a){return B.co.PL(a)},
 $S:185}
@@ -81869,14 +81869,14 @@ B.Pe=new A.p(!0,B.D,null,".AppleSystemUIFont",null,null,null,null,null,null,null
 B.Pw=new A.p(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelMedium",null,null,null,null)
 B.N8=new A.p(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelSmall",null,null,null,null)
 B.Qn=new A.dO(B.Oz,B.NH,B.OA,B.OY,B.Nr,B.Ny,B.NZ,B.OU,B.O9,B.Ph,B.N1,B.Ng,B.Pe,B.Pw,B.N8)
-B.OE=new A.p(!0,B.h,null,null,null,null,13,B.fB,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Qo=new A.jK("Design, Lead, Create",null,B.OE,null,null,null,null,null,null)
 B.O8=new A.p(!0,B.bC,null,null,null,null,10,B.jl,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Qp=new A.jK("Pre-Order",null,B.O8,null,null,null,null,null,null)
-B.OS=new A.p(!0,B.h,null,null,null,null,20,B.mF,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Qq=new A.jK("$8.88",null,B.OS,null,null,null,null,null,null)
+B.Qo=new A.jK("Pre-Order",null,B.O8,null,null,null,null,null,null)
+B.OE=new A.p(!0,B.h,null,null,null,null,13,B.fB,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Qp=new A.jK("Founding Designer for AI Startups",null,B.OE,null,null,null,null,null,null)
 B.P3=new A.p(!0,B.h,null,null,null,null,14,B.jl,null,0.3,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Qr=new A.jK("Design, Lead, Create",null,B.P3,null,null,null,null,null,null)
+B.Qq=new A.jK("Founding Designer for AI Startups",null,B.P3,null,null,null,null,null,null)
+B.OS=new A.p(!0,B.h,null,null,null,null,20,B.mF,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Qr=new A.jK("$8.88",null,B.OS,null,null,null,null,null,null)
 B.TH=new A.a92(0,"system")
 B.I4=new A.f(0.056,0.024)
 B.Ii=new A.f(0.108,0.3085)
