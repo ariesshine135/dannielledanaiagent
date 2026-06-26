@@ -1,0 +1,14 @@
+# Environment variables — never commit these
+lifegrid/.env
+.env
+
+# Dependencies
+lifegrid/node_modules/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flutter source — built output is committed to /preorder/ instead
+preorder-src/

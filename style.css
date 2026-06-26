@@ -285,6 +285,28 @@
   margin: 0;
 }
 
+/* ── Pre-Order conversational modal ── */
+.po-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.po-overlay.active { opacity: 1; pointer-events: all; }
+.po-frame {
+  width: min(480px, 94vw); height: min(620px, 88vh);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; background: #0d0d0d;
+}
+.po-close {
+  position: absolute; top: 24px; right: 28px;
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  font-size: 22px; cursor: pointer; line-height: 1;
+  transition: color 0.2s;
+}
+.po-close:hover { color: #fff; }
+
 /* ── Mobile performance: prevent large GIFs from crashing iOS Safari ── */
 @media (max-width: 767px) {
   /* Disable parallax fixed attachment — removes extra GPU compositing layer */
