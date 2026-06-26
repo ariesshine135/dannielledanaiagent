@@ -208,6 +208,17 @@
     <iframe src="/preorder/" class="po-frame" title="Pre-Order Design, Lead, Create"></iframe>
   </div>
 
+  <!-- Handle Stripe redirect message from Flutter iframe -->
+  <script>
+    window.addEventListener('message', function (e) {
+      try {
+        var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data && data.type === 'stripe_redirect' && data.url) {
+          window.location.href = data.url;
+        }
+      } catch (_) {}
+    });
+  </script>
   <script src="js/jquery-3.0.0.min.js"></script>
   <script src="js/jquery-migrate-3.0.0.min.js"></script>
   <script src="js/plugins.js"></script>
