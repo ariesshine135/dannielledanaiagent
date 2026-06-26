@@ -76546,7 +76546,7 @@ break
 default:break}},
 qf(){var s=0,r=A.Q(t.H),q=this,p
 var $async$qf=A.R(function(a,b){if(a===1)return A.N(b,r)
-for(;;)switch(s){case 0:p=A.jS("https://buy.stripe.com/REPLACE_WITH_LINK?prefilled_email="+A.CJ(2,q.y,B.a3,!1),0,null)
+for(;;)switch(s){case 0:p=A.jS("https://buy.stripe.com/test_9B66oH4PR7PIceTcoo5AQ00?prefilled_email="+A.CJ(2,q.y,B.a3,!1),0,null)
 s=4
 return A.S(A.ami(p),$async$qf)
 case 4:s=b?2:3
