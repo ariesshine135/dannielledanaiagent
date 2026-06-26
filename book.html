@@ -229,19 +229,30 @@
       function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        // Reset iframe so conversation restarts on re-open
         var fr = modal.querySelector('iframe');
-        fr.src = fr.src;
+        fr.src = '/preorder/';
       }
 
       closeBtn.addEventListener('click', closeModal);
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeModal();
       });
-      // Click backdrop to close
       modal.addEventListener('click', function (e) {
         if (e.target === modal) closeModal();
       });
+
+      // Auto-open modal on Stripe success redirect
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('success') === 'true') {
+          var orderId = params.get('order_id');
+          var fr = modal.querySelector('iframe');
+          fr.src = '/preorder/?success=true' + (orderId ? '&order_id=' + encodeURIComponent(orderId) : '');
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          history.replaceState({}, '', window.location.pathname);
+        }
+      })();
     })();
   </script>
 </body>
